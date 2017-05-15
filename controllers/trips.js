@@ -7,8 +7,8 @@ var tripController = {
   },
 
   index: function(req, res, next) {
-    Trip.find({}, (err, trip) => {
-      res.render('index', {trips: trip});
+    Trip.find({}, (err, trips) => {
+      res.render('index', {trips: trips});
     })
   },
 
