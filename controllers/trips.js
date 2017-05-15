@@ -17,8 +17,18 @@ var tripController = {
   },
 
   create: function(req, res, next) {
-    let trip = new Trip(req.body);
-
+    console.log(JSON.stringify(req.body));
+    var trip = new Trip({
+      name: req.body.name,
+      tagline: req.body.tagline,
+      location: req.body.location,
+      summary: req.body.summary,
+      tags: req.body.tags
+    });
+    trip.stops.push({
+      time: req.body.time,
+      stop: req.body.stop
+    });
     trip.save((err) => {
       if (err) return res.redirect('/trips/new');
       res.redirect('/trips');
@@ -31,26 +41,26 @@ var tripController = {
       res.render('edit');
     })
   },
-//
+
+  show: function(req, res, next) {
+    Trip.find(req.params.id, (err, trips) => {
+      res.render('/trips/:id', {trip: trip});
+    })
+  },
+
   update: function(req, res, next) {
     Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
       if (err) return res.render('/trips/' + req.params.id + '/edit');
       res.redirect('/trips');
     });
   },
-//
+
   delete: function(req, res, next) {
     Trip.findByIdAndRemove(req.params.id, function(err) {
         if (err) return res.redirect('/');
         res.redirect('/trips');
       });
-    },
-
-    show: function(req, res, next) {
-      Trip.find(req.params.id, (err, trips) => {
-        res.render('/trips/:id', {trip: trip});
-      })
-    },
+    }
 
 };
 

@@ -32,6 +32,24 @@
       <% } %>
     </div>
 
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <input class="mdl-textfield__input" name="time" placeholder="<%= trip.stops.time %>">
+        <input class="mdl-textfield__input" name="stop" placeholder="<%= trip.stops.stop %>">
+      <% } else { %>
+        <input name="time" placeholder="Time">
+        <input name="stop" placeholder="Stop">
+      <% } %>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <input class="mdl-textfield__input" name="tags" placeholder="<%= trip.tags %>">
+      <% } else { %>
+        <input name="tags" placeholder="Trip Tags">
+      <% } %>
+    </div>
+
   </div>
   <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
     <i class="material-icons">add</i>
