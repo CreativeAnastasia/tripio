@@ -1,4 +1,4 @@
-var mongoose=  require('mongoose');
+var mongoose =  require('mongoose');
 var Schema = mongoose.Schema;
 
 var tripSchema = new Schema({
@@ -11,3 +11,6 @@ var tripSchema = new Schema({
     type: String
 }],
 });
+
+
+module.exports = mongoose.model('Trip', tripSchema);
