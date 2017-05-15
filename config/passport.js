@@ -15,9 +15,10 @@ passport.use(new FacebookStrategy({
         return cb(null, user);
       } else {
         var newUser = new User({
-          name: String,
-          email: String,
-          facebookId: String
+          name: profile.displayName,
+          email: profile.emails[0].value,
+          facebookId: profile.id
+
         });
         newUser.save(function(err){
           if (err) return cb(err);
