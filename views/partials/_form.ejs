@@ -43,7 +43,8 @@
     <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
         <% trips.forEach(function(trip, index) { %>
-          <input class="mdl-textfield__input" name="stops" placeholder="<%= trip.stops %>">
+          <input class="mdl-textfield__input" name="stops" placeholder="<%= trip.stops[index].time %>">
+          <input class="mdl-textfield__input" name="stops" placeholder="<%= trip.stops[index].location %>">
         <% }) %>
       <% } else { %>
           <input name="stops" placeholder="Trip Stops">
@@ -53,7 +54,7 @@
     <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
         <% trips.forEach(function(trip, index) { %>
-          <input class="mdl-textfield__input" name="tags" placeholder="<%= trip.tags %>">
+          <input class="mdl-textfield__input" name="tags" placeholder="<%= trip.tags[index].type %>">
         <% }) %>
       <% } else { %>
           <input name="tags" placeholder="Trip Tags">
