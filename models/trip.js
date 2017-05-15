@@ -6,7 +6,7 @@ var tripSchema = new Schema({
   tagline: String,
   location: String,
   summary: String,
-  Stops: [{location: String, time: Number}],
+  stops: [{location: String, time: Number}],
   tags: [{
     type: String
 }],
