@@ -7,8 +7,8 @@ var tripController = {
   },
 
   index: function(req, res, next) {
-    Trip.find({}, (err, trip) => {
-      res.render('index', {trip: trip});
+    Trip.find({}, (err, trips) => {
+      res.render('index', {trips: trips});
     })
   },
 
@@ -20,7 +20,7 @@ var tripController = {
     let trip = new Trip(req.body);
 
     trip.save((err) => {
-      if (err) return res.render('trips/new');
+      if (err) return res.render('/trips/new');
       res.redirect("/trips");
     })
   },
@@ -34,7 +34,7 @@ var tripController = {
 
   update: function(req, res, next) {
     Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
-      if (err) return res.render('trips/' + req.params.id + '/edit');
+      if (err) return res.render('/trips/' + req.params.id + '/edit');
       res.redirect('/trips');
     });
   },
