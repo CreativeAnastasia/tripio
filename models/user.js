@@ -3,12 +3,11 @@ var Schema = mongoose.Schema;
 
 
 var userSchema = new Schema({
-  facebook: {
-    id: String,
-    token: String,
-    email: String,
     name: String
-      }
+    email: String,
+    facebookId: String,
+    created: { type: Date, default: Date.now }
+    }
 });
 
 
