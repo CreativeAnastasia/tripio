@@ -35,16 +35,16 @@
     <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="time" placeholder="<%= trip.stops.time %>">
-        <input class="mdl-textfield__input" name="location" placeholder="<%= trip.stops.location %>">
+        <input class="mdl-textfield__input" name="stop" placeholder="<%= trip.stops.stop %>">
       <% } else { %>
         <input name="time" placeholder="Time">
-        <input name="location" placeholder="Location">
+        <input name="stop" placeholder="Stop">
       <% } %>
     </div>
 
     <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="tags" placeholder="<%= trip.tags.type %>">
+        <input class="mdl-textfield__input" name="tags" placeholder="<%= trip.tags %>">
       <% } else { %>
         <input name="tags" placeholder="Trip Tags">
       <% } %>
