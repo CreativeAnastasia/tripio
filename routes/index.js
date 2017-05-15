@@ -9,6 +9,6 @@ router.post('/trips', tripController.create);
 router.get('/trips/:id', tripController.show);
 router.get('/trips/:id/edit', tripController.edit);
 router.put('/trips/:id', tripController.update);
-router.delete('/trips:id', tripController.delete);
+router.delete('/trips/:id', tripController.delete);
 
 module.exports = router;
