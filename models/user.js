@@ -7,8 +7,7 @@ var userSchema = new Schema({
     email: String,
     facebookId: String,
     created: { type: Date, default: Date.now }
-    }
-});
+    });
 
 
 module.exports = mongoose.model('User', userSchema);

@@ -2,9 +2,9 @@ var Trip = require('./../models/trip')
 
 var tripController = {
 
-  // user: function(req, res, next) {
-  //   res.render('user')
-  // },
+  user: function(req, res, next) {
+    res.render('user')
+  },
 
   index: function(req, res, next) {
     Trip.find({}, (err, trips) => {
@@ -20,9 +20,9 @@ var tripController = {
     let trip = new Trip(req.body);
 
     trip.save((err) => {
-      if (err) return res.render('/trips/new');
-      res.redirect("/trips");
-    })
+      if (err) return res.redirect('/trips/new');
+      res.redirect('/trips');
+    });
   },
 
   edit: function(req, res, next) {
