@@ -1,0 +1,65 @@
+<form action="/trips<%= trip ? '/' + trip._id + '?_method=PUT' : '' %>" method="POST">
+  <div class="row">
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <input class="mdl-textfield__input" name="name" placeholder="<%= trip.name %>">
+      <% } else { %>
+        <input name="name" placeholder="Trip Name">
+      <% } %>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <input class="mdl-textfield__input" name="tagline" placeholder="<%= trip.tagline %>">
+      <% } else { %>
+        <input name="tagline" placeholder="Trip Tagline">
+      <% } %>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <input class="mdl-textfield__input" name="location" placeholder="<%= trip.location %>">
+      <% } else { %>
+        <input name="location" placeholder="Trip Location">
+      <% } %>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <input class="mdl-textfield__input" name="summary" placeholder="<%= trip.summary %>">
+      <% } else { %>
+        <input name="summary" placeholder="Trip Summary">
+      <% } %>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <input class="mdl-textfield__input" name="summary" placeholder="<%= trip.summary %>">
+      <% } else { %>
+        <input name="summary" placeholder="Trip Summary">
+      <% } %>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <% trips.forEach(function(trip, index) { %>
+          <input class="mdl-textfield__input" name="stops" placeholder="<%= trip.stops %>">
+        <% }) %>
+      <% } else { %>
+          <input name="stops" placeholder="Trip Stops">
+      <% } %>
+    </div>
+
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <% trips.forEach(function(trip, index) { %>
+          <input class="mdl-textfield__input" name="tags" placeholder="<%= trip.tags %>">
+        <% }) %>
+      <% } else { %>
+          <input name="tags" placeholder="Trip Tags">
+      <% } %>
+    </div>
+
+  </div>
+  <input class="btn waves-effect waves-light" type="submit" value="Submit">
+</form>
