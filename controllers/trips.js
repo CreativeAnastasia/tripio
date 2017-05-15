@@ -2,9 +2,9 @@ var Trip = require('./../models/trip')
 
 var tripController = {
 
-  user: function(req, res, next) {
-    res.render('user')
-  },
+  // user: function(req, res, next) {
+  //   res.render('user')
+  // },
 
   index: function(req, res, next) {
     Trip.find({}, (err, trips) => {
@@ -31,20 +31,27 @@ var tripController = {
       res.render('edit');
     })
   },
-
+//
   update: function(req, res, next) {
     Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
       if (err) return res.render('/trips/' + req.params.id + '/edit');
       res.redirect('/trips');
     });
   },
-
-  destroy: function(req, res, next) {
+//
+  delete: function(req, res, next) {
     Trip.findByIdAndRemove(req.params.id, function(err) {
         if (err) return res.redirect('/');
         res.redirect('/trips');
       });
     },
+
+    show: function(req, res, next) {
+      Trip.find(req.params.id, (err, trips) => {
+        res.render('/trips/:id', {trip: trip});
+      })
+    },
+
 };
 
 module.exports = tripController;
