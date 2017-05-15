@@ -3,11 +3,11 @@ var Schema = mongoose.Schema;
 
 
 var userSchema = new Schema({
-    name: String,
-    email: String,
-    facebookId: String,
-    created: { type: Date, default: Date.now }
-    });
-
+  name: String,
+  email: String,
+  facebookId: String
+}, {
+  timestamps: true
+});
 
 module.exports = mongoose.model('User', userSchema);
