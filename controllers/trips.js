@@ -13,7 +13,7 @@ var tripController = {
   },
 
   new: function(req, res, next) {
-    res.render('new');
+    res.render('new', {trip: false});
   },
 
   create: function(req, res, next) {
