@@ -12,7 +12,6 @@ var passport = require('passport');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-require('./config/database.js')
 
 require('dotenv').config();
 
@@ -20,6 +19,7 @@ var app = express();
 
 // connect to the MongoDB with mongoose
 require('./config/passport');
+require('./config/database.js')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +32,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', index);
 app.use('/users', users);
