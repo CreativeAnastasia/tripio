@@ -5,18 +5,20 @@ var User = require('../models/user');
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: process.env.FACEBOOK_CALLBACK
+    callbackURL: process.env.FACEBOOK_CALLBACK,
+    profileFields: ['id', 'displayName', 'photos', 'email']
   },
 
   function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ 'facebookId': profile.id }, function (err, user) {
+    console.log("profile", profile);
+    User.findOne({ 'facebookId': profile.id }, function (err, user) {
       if (err) return cd(err);
       if (user) {
         return cb(null, user);
       } else {
         var newUser = new User({
           name: profile.displayName,
-          email: profile.emails[0].value,
+          email: profile.email,
           facebookId: profile.id
 
         });
