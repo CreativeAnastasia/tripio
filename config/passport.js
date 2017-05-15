@@ -15,9 +15,9 @@ passport.use(new FacebookStrategy({
         return cb(null, user);
       } else {
         var newUser = new User({
-          name:
-          email:
-          facebookId:
+          name: String,
+          email: String,
+          facebookId: String
         });
         newUser.save(function(err){
           if (err) return cb(err);
@@ -38,5 +38,3 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-
-
