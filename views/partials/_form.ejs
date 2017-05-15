@@ -44,9 +44,9 @@
 
     <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="type" placeholder="<%= trip.tags.type %>">
+        <input class="mdl-textfield__input" name="tags" placeholder="<%= trip.tags %>">
       <% } else { %>
-        <input name="type" placeholder="Trip Tags">
+        <input name="tags" placeholder="Trip Tags">
       <% } %>
     </div>
 

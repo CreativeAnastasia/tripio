@@ -11,7 +11,7 @@ var tripSchema = new Schema({
   tagline: String,
   location: String,
   summary: String,
-  stops: [{stopSchema}],
+  stops: [stopSchema],
   tags: [{type: String}]
 });
 

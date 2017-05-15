@@ -13,9 +13,9 @@
             <%= trip.tagline %><br>
             <%= trip.location %><br>
             <%= trip.summary %><br>
-            <%= trip.stops.time %><br>
-            <%= trip.stops.stop %><br>
-            <%= trip.tags.type %>
+            <%= trip.stops[0].time %><br>
+            <%= trip.stops[0].stop %><br>
+            <%= trip.tags %><br>
         <% }) %>
     </div>
   </body>
