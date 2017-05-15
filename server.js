@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var session = require('express-session');
+var passport = require('passport');
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -14,6 +17,9 @@ require('./config/database.js')
 require('dotenv').config();
 
 var app = express();
+
+// connect to the MongoDB with mongoose
+require('./config/passport');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
