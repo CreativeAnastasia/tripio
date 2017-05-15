@@ -9,6 +9,8 @@ var methodOverride = require('method-override');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+require('./config/database.js')
+
 require('dotenv').config();
 
 var app = express();
