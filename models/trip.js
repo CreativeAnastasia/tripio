@@ -2,7 +2,7 @@ var mongoose =  require('mongoose');
 var Schema = mongoose.Schema;
 
 var stopSchema = new Schema ({
-  location: String,
+  stop: String,
   time: Number
 });
 
@@ -12,9 +12,7 @@ var tripSchema = new Schema({
   location: String,
   summary: String,
   stops: [{stopSchema}],
-  tags: [{
-    type: String
-}],
+  tags: [{type: String}]
 });
 
 

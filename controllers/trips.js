@@ -17,9 +17,8 @@ var tripController = {
   },
 
   create: function(req, res, next) {
-    let trip = new Trip(req.body);
-
-    Trip.findById(req.params.tripId, (err, trip) => {
+    Trip.findById(req.params.id, (err, trip) => {
+      var trip = new Trip(req.body);
       trip.stops.push(req.body);
       trip.save((err) => {
         if (err) return res.redirect('/trips/new');
