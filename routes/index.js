@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var tripController = require('./../controllers/trip')
+var tripController = require('./../controllers/trips')
 
 /* GET home page. */
 router.get('/user', tripController.user);
