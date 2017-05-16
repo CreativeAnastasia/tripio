@@ -51,17 +51,17 @@ var tripController = {
 
   },
 
-  edit: function(req, res, next) {
-    Trip.findById(req.params.id, function(err, data) {
-      if (err) res.redirect('/trips');
-      res.render('edit');
-    })
-  },
-
   show: function(req, res, next) {
     Trip.findById(req.params.id, (err, trip) => {
       console.log(trip);
       res.render('show', {trip: trip, user: req.user});
+    })
+  },
+
+  edit: function(req, res, next) {
+    Trip.findById(req.params.id, function(err, trip) {
+      if (err) res.redirect('/trips');
+      res.render('edit', {trip: trip, user: req.user});
     })
   },
 
