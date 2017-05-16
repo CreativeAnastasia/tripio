@@ -7,8 +7,7 @@
   <% include ./partials/_nav %>
     <main class="mdl-layout__content">
     <div class="page-content tripio-content">
-        <h1>All Trips</h1>
-        <p>This is the index view</p>
+        <h2>All Trips</h2>
         <% trips.forEach(function(trip, index) { %>
             <%= trip.name %><br>
             <%= trip.tagline %><br>
@@ -16,7 +15,7 @@
             <%= trip.summary %><br>
             <%= trip.stops[0].time %><br>
             <%= trip.stops[0].stop %><br>
-            <%= trip.tags %><br>
+            <%= trip.tags %><br><br><br>
         <% }) %>
     </div>
     </main>
