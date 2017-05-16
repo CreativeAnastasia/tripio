@@ -67,7 +67,11 @@ var tripController = {
         if (err) return res.redirect('/');
         res.redirect('/trips');
       });
-    }
+    },
+
+  addrating: function(req, res, next) {
+    res.redirect('/trips/:id');
+  }
 
 };
 
