@@ -5,6 +5,17 @@ a {
   color: #00B7FF;
 }
 
-.trips {
-  padding-top: 80px;
+.tripio-content {
+  padding-left: 60px;
+}
+
+.drawer-separator {
+  height: 1px;
+  background-color: #dcdcdc;
+  margin: 8px 0;
+}
+
+.tripio-logo {
+
+  width: 190px;
 }

@@ -1,25 +1,36 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Title</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="/trips/new">Create Trip</a>
-        <a class="mdl-navigation__link" href="">Register</a>
-        <a class="mdl-navigation__link" href="">Login</a>
-        <a class="mdl-navigation__link" href="">Search</a>
-      </nav>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+        <label class="mdl-button mdl-js-button mdl-button--icon"
+               for="fixed-header-drawer-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="sample"
+                 id="fixed-header-drawer-exp">
+        </div>
+      </div>
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Tripio Logo</span>
+    <span class="">
+      <img class="tripio-logo" src="images/tripio_logo.png">
+    </span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Register</a>
-      <a class="mdl-navigation__link" href="">Login</a>
-      <a class="mdl-navigation__link" href="">View Source</a>
-      <a class="mdl-navigation__link" href="">Sam Skelton</a>
-      <a class="mdl-navigation__link" href="">Anastasiya Varanetskya</a>
-      <a class="mdl-navigation__link" href="">Julia Yi</a>
+      <div class="drawer-separator"></div>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Log In</a>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/trips/new">Create Trip</a>
+      <div class="drawer-separator"></div>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">View Source</a>
+      <div class="drawer-separator"></div>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Sam Skelton</a>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Anastasiya Varanetskya</a>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Julia Yi</a>
+      <div class="drawer-separator"></div>
     </nav>
   </div>
-</div>
+

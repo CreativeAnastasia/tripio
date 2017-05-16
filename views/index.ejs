@@ -5,7 +5,8 @@
   </head>
   <body>
   <% include ./partials/_nav %>
-    <div class="trips container">
+    <main class="mdl-layout__content">
+    <div class="page-content tripio-content">
         <h1>All Trips</h1>
         <p>This is the index view</p>
         <% trips.forEach(function(trip, index) { %>
@@ -17,6 +18,8 @@
             <%= trip.stops[0].stop %><br>
             <%= trip.tags %><br>
         <% }) %>
+    </div>
+    </main>
     </div>
   </body>
 </html>
