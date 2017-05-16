@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="text/javascript">
+      if (window.location.hash == '#_=_') {
+        window.location.hash = '';
+        history.pushState('', document.title, window.location.pathname);
+      }
+    </script>
     <% include ./partials/_head %>
   </head>
   <body>
-    <!-- Nav bar goes here -->
+  <% include ./partials/_nav %>
     <main class="mdl-layout__content">
     <div class="page-content tripio-content">
-        <h2>My Trips</h2>
-        <ul>
-          <% user.trips.forEach(function(trip) { %>
-            <li><%= trip.name %></li>
-          <% }); %>
-        </ul>
+    <div class="mdl-grid">
+        <% user.trips.forEach(function(trip, index) { %>
+            <div class="tripio-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text"><%= trip.name %></h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <%= trip.tagline %><br>
+                <%= trip.location %>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
+            </div>
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                </button>
+            </div>
+            </div><br>
+        <% }) %>
+    </div>
     </div>
     </main>
     </div>
   </body>
 </html>
+
