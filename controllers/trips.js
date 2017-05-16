@@ -2,8 +2,8 @@ var Trip = require('./../models/trip')
 
 var tripController = {
 
-  user: function(req, res, next) {
-    res.render('user')
+  mytrips: function(req, res, next) {
+    res.render('mytrips')
   },
 
   index: function(req, res, next) {
