@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="text/javascript">
+      if (window.location.hash == '#_=_') {
+        window.location.hash = '';
+        history.pushState('', document.title, window.location.pathname);
+        e.preventDefault();
+      }
     <% include ./partials/_head %>
+  </script>
   </head>
   <body>
   <% include ./partials/_nav %>
