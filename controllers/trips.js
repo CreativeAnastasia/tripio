@@ -43,8 +43,8 @@ var tripController = {
   },
 
   show: function(req, res, next) {
-    Trip.find(req.params.id, (err, trips) => {
-      res.render('/trips/:id', {trip: trip});
+    Trip.find(req.params.id, (err, trip) => {
+      res.render('show', {trips: trip});
     })
   },
 
