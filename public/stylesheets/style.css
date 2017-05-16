@@ -6,16 +6,11 @@ a {
 }
 
 .tripio-content {
-  padding-left: 95px;
-  padding-bottom: 50px;
+  margin: 40px 60px;
 }
 
 .tripio-logo {
   height: 65px;
-}
-
-.tripio-card.mdl-card {
-  width: 450px;
 }
 
 .tripio-card > .mdl-card__title {
