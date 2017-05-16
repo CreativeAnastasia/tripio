@@ -1,5 +1,5 @@
 <form action="/trips<%= trip ? '/' + trip._id + '?_method=PUT' : '' %>" method="POST">
-  <div class="row">
+  <div class="row" id="form">
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="name" placeholder="<%= trip.name %>">
@@ -20,10 +20,10 @@
     <br>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="location" placeholder="<%= trip.location %>">
+        <input class="mdl-textfield__input mdl-js-textfield autocomplete" name="location" id="ac2" placeholder="<%= trip.location %>">
       <% } else { %>
-        <input class="mdl-textfield__input" name="location">
-        <label class="mdl-textfield__label">Trip Location</label>
+        <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="location" placeholder="Location">
+        <label class="mdl-textfield__label"></label>
       <% } %>
     </div>
     <br>
@@ -46,10 +46,10 @@
     </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="stop" placeholder="<%= trip.stops.stop %>">
+        <input class="mdl-textfield__input mdl-js-textfield autocomplete" name="stop" placeholder="<%= trip.stops.stop %>">
       <% } else { %>
-        <input class="mdl-textfield__input" name="stop">
-        <label class="mdl-textfield__label">Stop</label>
+        <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop">
+        <label class="mdl-textfield__label" ></label>
       <% } %>
     </div>
     <br>
@@ -64,3 +64,22 @@
   </div>
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Add Trip</button>
 </form>
+
+<script type="text/javascript">
+function initialize() {
+
+    var acInputs = document.getElementsByClassName("autocomplete");
+
+    for (var i = 0; i < acInputs.length; i++) {
+
+        var autocomplete = new google.maps.places.Autocomplete(acInputs[i]);
+        autocomplete.inputId = acInputs[i].id;
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            document.getElementById("log").innerHTML = 'You used input with id ' + this.inputId;
+        });
+    }
+}
+
+initialize();
+</script>
