@@ -36,7 +36,7 @@
       <% } %>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="time">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="time" placeholder="<%= trip.stops.time %>">
       <% } else { %>
@@ -44,14 +44,15 @@
         <label class="mdl-textfield__label">Time</label>
       <% } %>
     </div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="stops">
       <% if (trip) { %>
-        <input class="mdl-textfield__input mdl-js-textfield autocomplete" name="stop" placeholder="<%= trip.stops.stop %>">
+        <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="<%= trip.stops.stop %>">
       <% } else { %>
         <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop">
         <label class="mdl-textfield__label" ></label>
       <% } %>
     </div>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="addStop">Add Stop</button>
     <br>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
@@ -82,4 +83,15 @@ function initialize() {
 }
 
 initialize();
+
+</script>
+
+<script>
+$("#addStop").click(function(e) {
+  e.preventDefault();
+//Append a new row of code to the "#stops" div
+  $("#stops").append('<div><input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop"</div>')
+  $("#time").append('<div><input class="mdl-textfield__input" name="time" </div>');
+;
+});
 </script>
