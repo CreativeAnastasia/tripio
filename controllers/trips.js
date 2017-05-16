@@ -27,10 +27,20 @@ var tripController = {
       summary: req.body.summary,
       tags: req.body.tags
     });
-    trip.stops.push({
-      time: req.body.time,
-      stop: req.body.stop
-    });
+    if (typeof req.body.stop === "object"){
+      req.body.stop.forEach(function(stop, i){
+        console.log('i is ', i)
+        trip.stops.push({
+          time: req.body.time[i],
+          stop: req.body.stop[i]
+        });
+      })
+    } else {
+      trip.stops.push({
+        time: req.body.time,
+        stop: req.body.stop
+      });
+    }
     trip.save((err) => {
       req.user.trips.push(trip._id);
       req.user.save(function(err) {
