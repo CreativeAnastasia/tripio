@@ -3,10 +3,6 @@ var router = express.Router();
 var tripController = require('../controllers/trips');
 var passport = require('passport');
 
-// The root route renders our only view
-router.get('/', tripController.index);
-
-
 router.get('/auth/facebook',
   passport.authenticate('facebook', { scope: 'email' }
 ));
@@ -24,9 +20,8 @@ router.get('/logout', function(req, res){
   res.redirect('/');
 });
 
-/* GET home page. */
 router.get('/mytrips', tripController.mytrips);
-router.get('/trips', tripController.index);
+router.get('/', tripController.index);
 router.get('/trips/new', tripController.new);
 router.post('/trips', tripController.create);
 router.get('/trips/:id', tripController.show);
