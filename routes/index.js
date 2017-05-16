@@ -4,9 +4,8 @@ var tripController = require('../controllers/trips');
 var passport = require('passport');
 
 // The root route renders our only view
-router.get('/', function(req, res) {
-  res.render('index', {user: req.user});
-});
+router.get('/', tripController.index);
+
 
 router.get('/auth/facebook',
   passport.authenticate('facebook', { scope: 'email' }
