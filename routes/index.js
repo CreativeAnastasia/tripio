@@ -3,6 +3,7 @@ var router = express.Router();
 var tripController = require('../controllers/trips');
 var passport = require('passport');
 
+
 // The root route renders our only view
 router.get('/', tripController.index);
 
