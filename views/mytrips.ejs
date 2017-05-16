@@ -18,8 +18,10 @@
                 <%= trip.location %>
             </div>
             <div class="mdl-card__actions mdl-card--border">
+              
                 <a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
                 <a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>/edit">Edit This Trip</a>
+
                 <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
                     <button class="mdl-button mdl-js-button mdl-button--primary" type="submit">Delete This Trip</button>
                 </form>
