@@ -25,6 +25,7 @@ router.get('/logout', function(req, res){
 });
 
 /* GET home page. */
+router.get('/mytrips', tripController.mytrips);
 router.get('/trips', tripController.index);
 router.get('/trips/new', tripController.new);
 router.post('/trips', tripController.create);
