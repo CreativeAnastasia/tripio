@@ -1,59 +1,66 @@
 <form action="/trips<%= trip ? '/' + trip._id + '?_method=PUT' : '' %>" method="POST">
   <div class="row">
-    <div class="mdl-textfield mdl-js-textfield">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="name" placeholder="<%= trip.name %>">
       <% } else { %>
-        <input class="mdl-textfield__input" name="name" placeholder="Trip Name">
+        <input class="mdl-textfield__input" name="name">
+        <label class="mdl-textfield__label">Trip Name</label>
       <% } %>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="tagline" placeholder="<%= trip.tagline %>">
       <% } else { %>
-        <input class="mdl-textfield__input" name="tagline" placeholder="Trip Tagline">
+        <input class="mdl-textfield__input" name="tagline">
+        <label class="mdl-textfield__label">Trip Tagline</label>
       <% } %>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="location" placeholder="<%= trip.location %>">
       <% } else { %>
-        <input class="mdl-textfield__input" name="location" placeholder="Trip Location">
+        <input class="mdl-textfield__input" name="location">
+        <label class="mdl-textfield__label">Trip Location</label>
       <% } %>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="summary" placeholder="<%= trip.summary %>">
       <% } else { %>
-        <input class="mdl-textfield__input" name="summary" placeholder="Trip Summary">
+        <textarea class="mdl-textfield__input" name="summary"></textarea>
+        <label class="mdl-textfield__label">Trip Summary</label>
       <% } %>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="time" placeholder="<%= trip.stops.time %>">
       <% } else { %>
-        <input class="mdl-textfield__input" name="time" placeholder="Time">
+        <input class="mdl-textfield__input" name="time">
+        <label class="mdl-textfield__label">Time</label>
       <% } %>
     </div>
-    <div class="mdl-textfield mdl-js-textfield">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="stop" placeholder="<%= trip.stops.stop %>">
       <% } else { %>
-        <input class="mdl-textfield__input" name="stop" placeholder="Stop">
+        <input class="mdl-textfield__input" name="stop">
+        <label class="mdl-textfield__label">Stop</label>
       <% } %>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <% if (trip) { %>
         <input class="mdl-textfield__input" name="tags" placeholder="<%= trip.tags %>">
       <% } else { %>
-        <input class="mdl-textfield__input" name="tags" placeholder="Tags">
+        <input class="mdl-textfield__input" name="tags">
+        <label class="mdl-textfield__label">Tags</label>
       <% } %>
     </div>
   </div>
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Add Trip</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Add Trip</button>
 </form>

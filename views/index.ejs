@@ -15,13 +15,27 @@
     <div class="page-content tripio-content">
         <h2>All Trips</h2>
         <% trips.forEach(function(trip, index) { %>
-            <%= trip.name %><br>
-            <%= trip.tagline %><br>
-            <%= trip.location %><br>
-            <%= trip.summary %><br>
-            <%= trip.stops[0].time %><br>
-            <%= trip.stops[0].stop %><br>
-            <%= trip.tags %><br><br><br>
+            <div class="tripio-card mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text"><%= trip.name %></h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <%= trip.tagline %><br>
+                <%= trip.location %><br>
+                <%= trip.summary %><br>
+                <%= trip.stops[0].time %><br>
+                <%= trip.stops[0].stop %><br>
+                <%= trip.tags %>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Get Started</a>
+            </div>
+            <div class="mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                </button>
+            </div>
+            </div><br>
         <% }) %>
     </div>
     </main>
