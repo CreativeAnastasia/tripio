@@ -7,9 +7,13 @@
     <!-- Nav bar goes here -->
     <main class="mdl-layout__content">
     <div class="page-content tripio-content">
-        <h2>Show Trip</h2>
-        <p>This is the show view</p>
-
+        <h2><%= trip.name %></h2>
+            <%= trip.tagline %><br>
+            <%= trip.location %><br>
+            <%= trip.summary %><br>
+            <%= trip.stops[0].time %><br>
+            <%= trip.stops[0].stop %><br>
+            <%= trip.tags %>
     </div>
     </main>
     </div>
