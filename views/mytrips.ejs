@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript">
-      if (window.location.hash == '#_=_') {
-        window.location.hash = '';
-        history.pushState('', document.title, window.location.pathname);
-      }
-    </script>
     <% include ./partials/_head %>
   </head>
   <body>
@@ -25,6 +19,9 @@
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
+                <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
+                    <button class="mdl-button mdl-js-button mdl-button--primary" type="submit">Delete This Trip</button>
+                </form>
             </div>
             <div class="mdl-card__menu">
                 <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
