@@ -6,16 +6,9 @@ a {
 }
 
 .tripio-content {
-  padding-left: 60px;
-}
-
-.drawer-separator {
-  height: 1px;
-  background-color: #dcdcdc;
-  margin: 8px 0;
+  padding-left: 90px;
 }
 
 .tripio-logo {
-
-  width: 190px;
+  height: 65px;
 }
