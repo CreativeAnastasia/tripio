@@ -6,14 +6,12 @@
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <% if (user) { %>
           <% console.log("user", user) %>
-
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/trips/new">Create Trip</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/mytrips">My Trips</a>
-
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/logout">Logout</a>
-        <% } else { %>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/auth/facebook">Login</a>
-        <% } %>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/trips/new">Create Trip</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/mytrips">My Trips</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/logout">Logout</a>
+          <% } else { %>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/auth/facebook">Login</a>
+          <% } %>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
