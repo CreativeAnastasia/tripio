@@ -13,11 +13,14 @@ var tripController = {
   },
 
   new: function(req, res, next) {
-    res.render('new', {trip: false});
+    res.render('new', {trip: false, user: req.user});
   },
 
   create: function(req, res, next) {
-    console.log(JSON.stringify(req.body));
+
+      console.log("user    ", user);
+
+    console.log("rew.body", JSON.stringify(req.body));
     var trip = new Trip({
       name: req.body.name,
       tagline: req.body.tagline,
@@ -30,9 +33,13 @@ var tripController = {
       stop: req.body.stop
     });
     trip.save((err) => {
+      user.save(function(err) {
+        res,json(user);
+      });
       if (err) return res.redirect('/trips/new');
       res.redirect('/trips');
     });
+
   },
 
   edit: function(req, res, next) {
