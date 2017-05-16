@@ -19,7 +19,7 @@ var tripController = {
 
   create: function(req, res, next) {
 
-    console.log("rew.body", JSON.stringify(req.body));
+    console.log("req.body", JSON.stringify(req.body));
     var trip = new Trip({
       name: req.body.name,
       tagline: req.body.tagline,
@@ -51,7 +51,7 @@ var tripController = {
   show: function(req, res, next) {
     Trip.findById(req.params.id, (err, trip) => {
       console.log(trip);
-      res.render('show', {trip: trip});
+      res.render('show', {trip: trip, user: req.user});
     })
   },
 
