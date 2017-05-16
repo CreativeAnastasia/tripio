@@ -1,14 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-Trip = require('./trip.js');
-tripSchema = mongoose.model('Trip').schema;
 
 
 var userSchema = new Schema({
   name: String,
   email: String,
   facebookId: String,
-  trips: [tripSchema]
+  trips: [{type: Schema.Types.ObjectId, ref: 'Trip'}]
 }, {
   timestamps: true
 });
