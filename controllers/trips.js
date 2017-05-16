@@ -51,7 +51,7 @@ var tripController = {
   show: function(req, res, next) {
     Trip.findById(req.params.id, (err, trip) => {
       console.log(trip);
-      res.render('show', {trip: trip});
+      res.render('show', {trip: trip, user: req.user});
     })
   },
 
