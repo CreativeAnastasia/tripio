@@ -3,7 +3,7 @@ var Trip = require('./../models/trip')
 var tripController = {
 
   mytrips: function(req, res, next) {
-    res.render('mytrips')
+    res.render('mytrips', {user: req.user});
   },
 
   index: function(req, res, next) {
@@ -14,11 +14,10 @@ var tripController = {
 
   new: function(req, res, next) {
     res.render('new', {trip: false, user: req.user});
+    console.log("user in new    ", user);
   },
 
   create: function(req, res, next) {
-
-      console.log("user    ", user);
 
     console.log("rew.body", JSON.stringify(req.body));
     var trip = new Trip({
@@ -33,11 +32,11 @@ var tripController = {
       stop: req.body.stop
     });
     trip.save((err) => {
-      user.save(function(err) {
-        res,json(user);
+      req.user.trips.push(trip._id);
+      req.user.save(function(err) {
+        if (err) return res.redirect('/trips/new');
+        res.redirect('/mytrips');
       });
-      if (err) return res.redirect('/trips/new');
-      res.redirect('/trips');
     });
 
   },
