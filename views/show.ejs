@@ -9,14 +9,20 @@
     <div class="page-content tripio-content ">
     <div class="centeritems mdl-grid">
         <div class="mdl-layout-spacer"></div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <h2><%= trip.name %></h2><br>
-                <h6><%= trip.tagline %></h6>
-                    <%= trip.location %><br>
-                    <%= trip.summary %><br>
-                    <%= trip.stops[0].time %><br>
-                    <%= trip.stops[0].stop %><br>
-                    <%= trip.tags %>
+            <div class="mdl-cell mdl-cell--6-col">
+                <span class="tripio-show">
+                    <h3><%= trip.name %></h3>
+                    <h4><%= trip.tagline %></h4><br>
+                </span>
+                <p>Google Map appears here</p>
+                <p>
+                    <%= trip.location %>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    Star Rating<br>
+                    <%= trip.summary %><br><br>
+                    <%= trip.stops[0].time %>&nbsp;&nbsp;@&nbsp;&nbsp;
+                    <%= trip.stops[0].stop %><br><br>
+                    Tags: <%= trip.tags %>
+                </p>
             </div>
         <div class="mdl-layout-spacer"></div>
     </div>
