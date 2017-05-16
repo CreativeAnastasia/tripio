@@ -7,8 +7,21 @@ a {
 
 .tripio-content {
   padding-left: 90px;
+  padding-bottom: 50px;
 }
 
 .tripio-logo {
   height: 65px;
+}
+
+.tripio-card.mdl-card {
+  width: 450px;
+}
+.tripio-card > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../images/sample.png') center / cover;
+}
+.tripio-card > .mdl-card__menu {
+  color: #fff;
 }
