@@ -21,7 +21,7 @@ router.get('/logout', function(req, res){
 });
 
 router.get('/mytrips', tripController.mytrips);
-router.get('/', tripController.index);
+router.get('/trips', tripController.index);
 router.get('/trips/new', tripController.new);
 router.post('/trips', tripController.create);
 router.get('/trips/:id', tripController.show);
