@@ -87,11 +87,15 @@ initialize();
 </script>
 
 <script>
+var nextAc = 3;
+
 $("#addStop").click(function(e) {
   e.preventDefault();
 //Append a new row of code to the "#stops" div
-  $("#stops").append('<div><input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop"</div>')
+  $("#stops").append(`<div><input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac[${nextAc}]" name="stop" placeholder="Stop"</div>`)
   $("#time").append('<div><input class="mdl-textfield__input" name="time" </div>');
-;
+  var auto = new google.maps.places.Autocomplete(document.getElementById(`ac[${nextAc}]`));
+  auto.inputId = document.getElementById(`ac[${nextAc}]`).id;
+  nextAc++
 });
 </script>
