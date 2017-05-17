@@ -28,14 +28,18 @@ a {
 .tripio-rating {
   height: 30px;
   width: 125px;
-  position: relative;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 15px;
+  padding-right: 10px;
 }
 
 .tripio-rating div {
   background-color: yellow;
   height: 30px;
   width: 125px;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 }
