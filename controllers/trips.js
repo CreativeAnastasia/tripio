@@ -98,14 +98,14 @@ var tripController = {
   },
 
   addrating: function(req, res, next) {
-    Trip.findById(req.params.id, function(err, trip) {
-      trip.rate(req.query.rating, req.user.id, function(ratedTrip) {
-        res.redirect(`/trips/${req.params.id}`);
+    console.log("in the addraring+++++++++++++++++++++++++++++++++++")
+      Trip.findById(req.params.id, function(err, trip) {
+        trip.rate(req.query.rating, req.user.id, function(updatedTrip) {
+          console.log('updatedTrip', updatedTrip);
+          res.redirect(`/trips/${req.params.id}`);
+        });
       });
-      if (err) return res.redirect('/');
-        res.redirect('/trips');
-    });
-  }
+    }
 
 };
 
