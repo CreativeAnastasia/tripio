@@ -25,9 +25,28 @@ a {
   background: url('../images/sample.png') center / cover;
 }
 
-.tripio-stars {
+.tripio-rating {
   height: 30px;
-  padding: 0 0 10px 10px;
+  width: 125px;
+  position: relative;
+}
+
+.tripio-rating div {
+  background-color: yellow;
+  height: 30px;
+  width: 125px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tripio-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  border: 0;
+
 }
 
 .tripio-card > .mdl-card__menu {

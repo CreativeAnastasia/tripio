@@ -46,12 +46,9 @@
           mapTypeId: 'terrain'
       };
       map = new google.maps.Map($('#map_canvas')[0], myOptions);
-
       var trip = <%- tripJSON %>;
-
       var addresses = trip.stops.map(function(stop) { return stop.stop; });
       console.log(addresses);
-
       for (var x = 0; x < addresses.length; x++) {
           $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
               var p = data.results[0].geometry.location
