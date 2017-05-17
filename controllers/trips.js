@@ -101,11 +101,10 @@ var tripController = {
 
   addrating: function(req, res, next) {
     Trip.findById(req.params.id, function(err, trip) {
+      if (err) return res.redirect('/');
       trip.rate(req.query.rating, req.user.id, function(ratedTrip) {
         res.redirect(`/trips/${req.params.id}`);
       });
-      if (err) return res.redirect('/');
-        res.redirect('/trips');
     });
   }
 
