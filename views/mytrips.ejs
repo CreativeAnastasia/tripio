@@ -23,6 +23,7 @@
                 <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>/edit">Edit This Trip</a>
                 <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
                     <button class="mdl-button mdl-js-button mdl-button--accent" type="submit">Delete This Trip</button>
+
                 </form>
                 <%= trip.avgRating %>
                     <div class="tripio-rating">
@@ -38,10 +39,13 @@
             </div>
             </div><br>
         <% }) %>
+
     </div>
     </div>
     </main>
     </div>
+    <script src="dialog-polyfill.js"></script>
+
     <script>
         var ratings = [
         <% user.trips.forEach(function(trip, index) { %>
