@@ -53,7 +53,6 @@ var tripController = {
     Trip.findById(req.params.id, (err, trip) => {
       var tripjson = trip.toObject();
       tripjson = JSON.stringify(tripjson)
-      var location = trip.location
       console.log(location)
       console.log(tripjson)
       console.log('typeof', typeof tripjson)
