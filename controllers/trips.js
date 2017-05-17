@@ -53,6 +53,8 @@ var tripController = {
     Trip.findById(req.params.id, (err, trip) => {
       var tripjson = trip.toObject();
       tripjson = JSON.stringify(tripjson)
+      var location = trip.location
+      console.log(location)
       console.log(tripjson)
       console.log('typeof', typeof tripjson)
       res.render('show', {trip: trip, user: req.user, tripJSON: tripjson});
@@ -67,7 +69,7 @@ var tripController = {
   },
 
   update: function(req, res, next) {
-    Trip.findByIdAndUpdate(req.params.id, req.body, function (err, trip) {
+    Trip.findById(req.params.id, function (err, trip) {
       trip.stops = [];
       if (typeof req.body.stop === "object"){
         req.body.stop.forEach(function(stop, i){
@@ -98,14 +100,14 @@ var tripController = {
   },
 
   addrating: function(req, res, next) {
-    console.log("in the addraring+++++++++++++++++++++++++++++++++++")
-      Trip.findById(req.params.id, function(err, trip) {
-        trip.rate(req.query.rating, req.user.id, function(updatedTrip) {
-          console.log('updatedTrip', updatedTrip);
-          res.redirect(`/trips/${req.params.id}`);
-        });
+    Trip.findById(req.params.id, function(err, trip) {
+      trip.rate(req.query.rating, req.user.id, function(ratedTrip) {
+        res.redirect(`/trips/${req.params.id}`);
       });
-    }
+      if (err) return res.redirect('/');
+        res.redirect('/trips');
+    });
+  }
 
 };
 
