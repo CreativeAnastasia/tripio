@@ -13,7 +13,6 @@
                 <span class="tripio-show">
                     <h3><%= trip.name %></h3>
 
-                    <%= trip.avgRating %>
                       <div class="tripio-rating">
                           <div id="rating-show">
                               <img class="tripio-stars" src="../images/transparent_stars.png" alt="Start">
@@ -24,9 +23,9 @@
                 </span>
                 <div id="map_canvas"></div>
                 <p>
+                <% if (user) { %>
                 <div id="rating">
                     <div id="rating">
-                      <h3><%= trip.avgRating %></h3>
                       <a href="/trips/<%= trip._id %>/ratings?rating=1"><span>★</span></a>
                       <a href="/trips/<%= trip._id %>/ratings?rating=2"><span>★</span></a>
                       <a href="/trips/<%= trip._id %>/ratings?rating=3"><span>★</span></a>
@@ -34,6 +33,7 @@
                       <a href="/trips/<%= trip._id %>/ratings?rating=5"><span>★</span></a>
                     </div>
                 </div>
+                <% } %>
                     <%= trip.location %>
                     <br>
                     <%= trip.summary %><br><br>
@@ -58,20 +58,127 @@
       var myOptions = {
           zoom: 10,
           center: new google.maps.LatLng(0, 0),
-          mapTypeId: 'terrain'
+          styles: [
+    {
+        "featureType": "landscape",
+        "stylers": [
+            {
+                "hue": "#FFBB00"
+            },
+            {
+                "saturation": 43.400000000000006
+            },
+            {
+                "lightness": 37.599999999999994
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "stylers": [
+            {
+                "hue": "#FFC200"
+            },
+            {
+                "saturation": -61.8
+            },
+            {
+                "lightness": 45.599999999999994
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "stylers": [
+            {
+                "hue": "#FF0300"
+            },
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 51.19999999999999
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "stylers": [
+            {
+                "hue": "#FF0300"
+            },
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 52
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "stylers": [
+            {
+                "hue": "#0078FF"
+            },
+            {
+                "saturation": -13.200000000000003
+            },
+            {
+                "lightness": 2.4000000000000057
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "stylers": [
+            {
+                "hue": "#00FF6A"
+            },
+            {
+                "saturation": -1.0989010989011234
+            },
+            {
+                "lightness": 11.200000000000017
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    }
+]
       };
       map = new google.maps.Map($('#map_canvas')[0], myOptions);
       var trip = <%- tripJSON %>;
       var addresses = trip.stops.map(function(stop) { return stop.stop; });
       console.log(addresses);
+      var labels = '123456789'
+      var labelIndex = 0;
       for (var x = 0; x < addresses.length; x++) {
           $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
               var p = data.results[0].geometry.location
               var latlng = new google.maps.LatLng(p.lat, p.lng);
               map.setCenter(latlng)
-              new google.maps.Marker({
+              new google.maps.Marker(
+                {
                   position: latlng,
-                  map: map
+                  map: map,
+                  label: labels[labelIndex++ % labels.length]
               });
             })
           }

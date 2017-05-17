@@ -48,14 +48,18 @@ a {
 .tripio-rating {
   height: 30px;
   width: 125px;
-  position: relative;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 15px;
+  padding-right: 10px;
 }
 
 .tripio-rating div {
   background-color: yellow;
   height: 30px;
   width: 125px;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 }
@@ -99,10 +103,14 @@ a {
 }
 
 #rating span.hover {
-  color: #117a65;
+  color: yellow;
   opacity: 1;
   transform: rotateX(0deg) scale(1.1);
-  text-shadow: 2px 2px 20px #117a65;
+  text-shadow: 1px 1px 0 #6e2c00,
+     -1px -1px 0 #6e2c00,
+      1px -1px 0 #6e2c00,
+      -1px 1px 0 #6e2c00,
+       1px 1px 0 #6e2c00;
 }
 
 #map_canvas {
