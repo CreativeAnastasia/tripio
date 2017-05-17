@@ -77,6 +77,23 @@ var tripController = {
         if (err) return res.redirect('/trips');
           res.redirect('/mytrips');
       });
+    })
+  },
+
+  show: function(req, res, next) {
+    Trip.findById(req.params.id, (err, trip) => {
+      var tripjson = trip.toObject();
+      tripjson = JSON.stringify(tripjson)
+      console.log(tripjson)
+      console.log('typeof', typeof tripjson)
+      res.render('show', {trip: trip, user: req.user, tripJSON: tripjson});
+    })
+  },
+
+  update: function(req, res, next) {
+    Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
+      if (err) return res.render('/trips/' + req.params.id + '/edit');
+      res.redirect('/trips');
     });
   },
 
@@ -90,11 +107,10 @@ var tripController = {
   addrating: function(req, res, next) {
     Trip.findById(req.params.id, function(err, trip) {
       trip.rate(req.query.rating, req.user.id, function(ratedTrip) {
-        console.log('ratedTrip', ratedTrip);
         res.redirect(`/trips/${req.params.id}`);
       });
       if (err) return res.redirect('/');
-      res.redirect('/trips');
+        res.redirect('/trips');
     });
   }
 
