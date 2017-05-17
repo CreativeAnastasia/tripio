@@ -7,7 +7,7 @@ var stopSchema = new Schema ({
 });
 
 var ratingSchema = new Schema ({
-  userId: Number,
+  userId: Schema.Types.ObjectId,
   rating: Number
 })
 
@@ -21,9 +21,24 @@ var tripSchema = new Schema({
   ratings: [ratingSchema]
 });
 
+tripSchema.methods.rate = function(rating, userId, cb){
+  var trip = this;
+  if ( this.ratings.some(rating => rating.userId.equals(userId)) ) {
+    cb(trip);
+  } else {
+    this.ratings.push({userId: userId, rating: rating});
+    this.save(function(err){
+      cb(trip);
+    });
+  }
+}
+
 tripSchema.virtual('avgRating').get(function() {
-  //use reduce on array
-  //return this=current document this.Ratings
+  return this.ratings.reduce((acc, rating, idx) => {
+    acc += rating.rating;
+    if (idx === this.ratings.length - 1) return Math.round(acc / this.ratings.length, 1);
+    return acc;
+  }, 0);
 });
 
 ratingSchema.set('toJSON', {
