@@ -24,6 +24,12 @@
                 <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
                     <button class="mdl-button mdl-js-button mdl-button--accent" type="submit">Delete This Trip</button>
                 </form>
+                <%= trip.avgRating %>
+                    <div class="tripio-rating">
+                        <div  id="<%= 'rating-' + index %>">
+                            <img class="tripio-stars" src="images/transparent_stars.png" alt="Start">
+                        </div>
+                    </div>
             </div>
             <div class="mdl-card__menu">
                 <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
@@ -36,6 +42,17 @@
     </div>
     </main>
     </div>
+    <script>
+        var ratings = [
+        <% user.trips.forEach(function(trip, index) { %>
+            <%= trip.avgRating %>,
+        <% }) %>
+        ];
+        ratings.forEach(function(rating, idx) {
+           var ratingPercentage = rating / 5 * 100;
+           document.getElementById(`rating-${idx}`).style.width=`${ratingPercentage}%`;
+        });
+     </script>
   </body>
 </html>
 
