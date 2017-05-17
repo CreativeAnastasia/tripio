@@ -60,12 +60,11 @@ var tripController = {
     // update values in trip
     // save trip's new values
     console.log(req.body);
-    // Trip.findById(req.params.id, function (err, trip) {
-    //   // edit in here
-    //   //trip.save
-    // })
+    Trip.findById(req.params.id, function (err, trip) {
+      //trip.save
+    })
 
-    Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
+    Trip.findByIdAndUpdate(req.params.id, trip, function(err, trip) {
       if (err) return res.redirect('/trips');
       res.redirect('/mytrips');
     });
