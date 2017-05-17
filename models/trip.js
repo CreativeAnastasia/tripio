@@ -2,8 +2,8 @@ var mongoose =  require('mongoose');
 var Schema = mongoose.Schema;
 
 var stopSchema = new Schema ({
-  stop: String,
-  time: Number
+  stop: {type: String, required: true, minlength: 1},
+  time: {type: Number, required: true, minlength: 1}
 });
 
 var ratingSchema = new Schema ({

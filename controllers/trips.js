@@ -41,6 +41,7 @@ var tripController = {
     }
     trip.save((err) => {
       req.user.trips.push(trip._id);
+      console.log(req.user)
       req.user.save(function(err) {
         if (err) return res.redirect('/trips/new');
         res.redirect('/mytrips');
@@ -60,22 +61,31 @@ var tripController = {
 
   edit: function(req, res, next) {
     Trip.findById(req.params.id, function(err, trip) {
-      if (err) res.redirect('/trips');
+      if (err) return res.redirect('/trips');
       res.render('edit', {trip: trip, user: req.user});
     });
   },
 
   update: function(req, res, next) {
     Trip.findById(req.params.id, function (err, trip) {
-      console.log('req.body is ', JSON.stringify(req.body))
-      trip.stops.push({
-        time: req.body.time,
-        stop: req.body.stop
-      });
-      console.log('new stops', trip.stops)
-      trip.save().then(function(err, savedTrip) {
+      trip.stops = [];
+      if (typeof req.body.stop === "object"){
+        req.body.stop.forEach(function(stop, i){
+          console.log('i is ', i)
+          trip.stops.push({
+            time: req.body.time[i],
+            stop: req.body.stop[i]
+          });
+        })
+      } else {
+        trip.stops.push({
+          time: req.body.time,
+          stop: req.body.stop
+        });
+      }
+      trip.save(function(err, savedTrip) {
         if (err) return res.redirect('/trips');
-          res.redirect('/mytrips');
+        res.redirect('/mytrips');
       });
     })
   },
