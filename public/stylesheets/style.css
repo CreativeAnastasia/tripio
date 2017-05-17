@@ -25,6 +25,11 @@ a {
   background: url('../images/sample.png') center / cover;
 }
 
+.tripio-stars {
+  height: 30px;
+  padding: 0 0 10px 10px;
+}
+
 .tripio-card > .mdl-card__menu {
   color: #fff;
 }
