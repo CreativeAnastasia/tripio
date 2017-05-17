@@ -1,44 +1,44 @@
 <form action="/trips<%= trip ? '/' + trip._id + '?_method=PUT' : '' %>" method="POST">
   <div class="row" id="form">
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="name" placeholder="<%= trip.name %>">
+        <input class="mdl-textfield__input" name="name" placeholder="Trip Name" value="<%= trip.name %>">
       <% } else { %>
         <input class="mdl-textfield__input" name="name">
         <label class="mdl-textfield__label">Trip Name</label>
       <% } %>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="tagline" placeholder="<%= trip.tagline %>">
+        <input class="mdl-textfield__input" name="name" placeholder="Tagline" value="<%= trip.tagline %>">
       <% } else { %>
         <input class="mdl-textfield__input" name="tagline">
-        <label class="mdl-textfield__label">Trip Tagline</label>
+        <label class="mdl-textfield__label">Tagline</label>
       <% } %>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
-        <input class="mdl-textfield__input mdl-js-textfield autocomplete" name="location" id="ac2" placeholder="<%= trip.location %>">
+        <input class="mdl-textfield__input mdl-js-textfield autocomplete" name="location" id="ac2" placeholder="Location" value="<%= trip.location %>">
       <% } else { %>
         <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="location" placeholder="Location">
         <label class="mdl-textfield__label"></label>
       <% } %>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="summary" placeholder="<%= trip.summary %>">
+        <input class="mdl-textfield__input" name="tagline" placeholder="Summary" value="<%= trip.summary %>">
       <% } else { %>
         <textarea class="mdl-textfield__input" name="summary"></textarea>
-        <label class="mdl-textfield__label">Trip Summary</label>
+        <label class="mdl-textfield__label">Summary</label>
       <% } %>
     </div>
     <br>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="time">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="time" placeholder="<%= trip.stops.time %>">
+        <input class="mdl-textfield__input" name="time" placeholder="Time" value="<%= trip.stops.time %>">
       <% } else { %>
         <input class="mdl-textfield__input" name="time">
         <label class="mdl-textfield__label">Time</label>
@@ -46,56 +46,49 @@
     </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="stops">
       <% if (trip) { %>
-        <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="<%= trip.stops.stop %>">
+        <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop" value="<%= trip.stops.stop %>">
       <% } else { %>
         <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop">
         <label class="mdl-textfield__label" ></label>
       <% } %>
     </div>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="addStop">Add Stop</button>
+    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent" id="addStop">
+      <i class="material-icons">add</i>
+    </button>
     <br>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="tags" placeholder="<%= trip.tags %>">
+        <input class="mdl-textfield__input" name="tags" placeholder="Tags" value="<%= trip.tags %>">
       <% } else { %>
         <input class="mdl-textfield__input" name="tags">
         <label class="mdl-textfield__label">Tags</label>
       <% } %>
     </div>
   </div>
-  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Add Trip</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button>
+
 </form>
 
 <script type="text/javascript">
 function initialize() {
-
     var acInputs = document.getElementsByClassName("autocomplete");
-
     for (var i = 0; i < acInputs.length; i++) {
-
         var autocomplete = new google.maps.places.Autocomplete(acInputs[i]);
         autocomplete.inputId = acInputs[i].id;
-
         google.maps.event.addListener(autocomplete, 'place_changed', function () {
             document.getElementById("log").innerHTML = 'You used input with id ' + this.inputId;
         });
     }
 }
-
 initialize();
-
 </script>
 
 <script>
-var nextAc = 3;
-
 $("#addStop").click(function(e) {
   e.preventDefault();
 //Append a new row of code to the "#stops" div
-  $("#stops").append(`<div><input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac[${nextAc}]" name="stop" placeholder="Stop"</div>`)
+  $("#stops").append('<div><input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop"</div>')
   $("#time").append('<div><input class="mdl-textfield__input" name="time" </div>');
-  var auto = new google.maps.places.Autocomplete(document.getElementById(`ac[${nextAc}]`));
-  auto.inputId = document.getElementById(`ac[${nextAc}]`).id;
-  nextAc++
+;
 });
 </script>
