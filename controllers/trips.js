@@ -59,7 +59,7 @@ var tripController = {
   },
 
   edit: function(req, res, next) {
-    Trip.findById(req.params.id, function(err, data) {
+    Trip.findById(req.params.id, function(err, trip) {
       if (err) res.redirect('/trips');
       res.render('edit', {trip: trip, user: req.user});
     });
@@ -78,23 +78,6 @@ var tripController = {
           res.redirect('/mytrips');
       });
     })
-  },
-
-  show: function(req, res, next) {
-    Trip.findById(req.params.id, (err, trip) => {
-      var tripjson = trip.toObject();
-      tripjson = JSON.stringify(tripjson)
-      console.log(tripjson)
-      console.log('typeof', typeof tripjson)
-      res.render('show', {trip: trip, user: req.user, tripJSON: tripjson});
-    })
-  },
-
-  update: function(req, res, next) {
-    Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
-      if (err) return res.render('/trips/' + req.params.id + '/edit');
-      res.redirect('/trips');
-    });
   },
 
   delete: function(req, res, next) {
