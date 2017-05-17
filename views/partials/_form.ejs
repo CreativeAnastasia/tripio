@@ -11,7 +11,7 @@
     <br>
     <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="name" placeholder="Tagline" value="<%= trip.tagline %>">
+        <input class="mdl-textfield__input" name="tagline" placeholder="Tagline" value="<%= trip.tagline %>">
       <% } else { %>
         <input class="mdl-textfield__input" name="tagline">
         <label class="mdl-textfield__label">Tagline</label>
@@ -29,7 +29,7 @@
     <br>
     <div class="mdl-textfield mdl-js-textfield">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="tagline" placeholder="Summary" value="<%= trip.summary %>">
+        <input class="mdl-textfield__input" name="summary" placeholder="Summary" value="<%= trip.summary %>">
       <% } else { %>
         <textarea class="mdl-textfield__input" name="summary"></textarea>
         <label class="mdl-textfield__label">Summary</label>

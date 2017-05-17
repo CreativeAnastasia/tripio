@@ -56,6 +56,15 @@ var tripController = {
   },
 
   update: function(req, res, next) {
+    // grab trip from database
+    // update values in trip
+    // save trip's new values
+    console.log(req.body);
+    // Trip.findById(req.params.id, function (err, trip) {
+    //   // edit in here
+    //   //trip.save
+    // })
+
     Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
       if (err) return res.redirect('/trips');
       res.redirect('/mytrips');
