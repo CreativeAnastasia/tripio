@@ -36,7 +36,7 @@ tripSchema.methods.rate = function(rating, userId, cb){
 tripSchema.virtual('avgRating').get(function() {
   return this.ratings.reduce((acc, rating, idx) => {
     acc += rating.rating;
-    if (idx === this.ratings.length - 1) return (acc / this.ratings.length);
+    if (idx === this.ratings.length - 1) return (acc / this.ratings.length).toFixed(2);
     return acc;
   }, 0);
 });
