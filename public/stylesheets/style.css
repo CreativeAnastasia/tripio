@@ -21,8 +21,13 @@ a {
 
 .fixed-link:hover {
   background-color: #FFFFFF;
+  opacity: 0.8;
   color: teal;
-  padding: 32px 30px;
+  padding: 5px 40px;
+}
+
+.drawer-link {
+  transition: 0.4s;
 }
 
 .tripio-content {

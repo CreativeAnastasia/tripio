@@ -67,7 +67,8 @@ var tripController = {
   },
 
   update: function(req, res, next) {
-    Trip.findById(req.params.id, function (err, trip) {
+    Trip.findByIdAndUpdate(req.params.id, req.body, function (err, trip) {
+      console.log(req.body)
       trip.stops = [];
       if (typeof req.body.stop === "object"){
         req.body.stop.forEach(function(stop, i){
