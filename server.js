@@ -10,7 +10,6 @@ var methodOverride = require('method-override');
 var session = require('express-session');
 var passport = require('passport');
 
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 

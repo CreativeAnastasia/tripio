@@ -32,6 +32,6 @@ router.get('/trips/:id', tripController.show);
 router.get('/trips/:id/edit', tripController.edit);
 router.put('/trips/:id', tripController.update);
 router.delete('/trips/:id', tripController.delete);
-router.get('/trips/:id/ratings', tripController.addrating);
+// router.get('/trips/:id/ratings', tripController.addrating);
 
 module.exports = router;
