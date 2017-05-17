@@ -42,8 +42,8 @@
           <input class="mdl-textfield__input" name="time" placeholder="Time" value="<%= stop.time %>">
         <% }) %>
       <% } else { %>
-        <input class="mdl-textfield__input" name="time">
-        <label class="mdl-textfield__label">Time</label>
+        <input class="mdl-textfield__input" name="time" placeholder="Time">
+        <label class="mdl-textfield__label"></label>
       <% } %>
     </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="stops">
@@ -100,7 +100,7 @@ initialize();
     e.preventDefault();
   //Append a new row of code to the "#stops" div
  +  $("#stops").append(`<div><input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac[${nextAc}]" name="stop" placeholder="Stop"</div>`)
-    $("#time").append('<div><input class="mdl-textfield__input" name="time" </div>');
+    $("#time").append('<div><input class="mdl-textfield__input" name="time" placeholder="Time"</div>');
 
    var auto = new google.maps.places.Autocomplete(document.getElementById(`ac[${nextAc}]`));
    auto.inputId = document.getElementById(`ac[${nextAc}]`).id;
