@@ -65,7 +65,13 @@
       <% } %>
     </div>
   </div>
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  <% if (trip) { %>
+    Save Trip
+  <% } else { %>
+    Add Trip
+  <% } %>
+  </button>
 
 </form>
 
