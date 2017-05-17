@@ -80,7 +80,12 @@ var tripController = {
     },
 
   addrating: function(req, res, next) {
-    res.redirect('/trips/:id');
+    Trip.findById(req.params.id, function(err, trip) {
+      trip.rate(req.query.rating, req.user.id, function(updatedTrip) {
+        console.log('updatedTrip', updatedTrip);
+        res.redirect(`/trips/${req.params.id}`);
+      });
+    });
   }
 
 };
