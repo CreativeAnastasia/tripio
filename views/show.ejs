@@ -27,8 +27,10 @@
                     <%= trip.location %>
                     <br>
                     <%= trip.summary %><br><br>
-                    <%= trip.stops[0].time %>&nbsp;&nbsp;@&nbsp;&nbsp;
-                    <%= trip.stops[0].stop %><br><br>
+                    <% trip.stops.forEach(function(stop) { %>
+                      <%= stop.time %>&nbsp;&nbsp;@&nbsp;&nbsp;
+                      <%= stop.stop %><br><br>
+                    <% }) %>
                     Tags: <%= trip.tags %>
                 </p>
             </div>

@@ -38,7 +38,9 @@
     <br>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="time">
       <% if (trip) { %>
-        <input class="mdl-textfield__input" name="time" placeholder="Time" value="<%= trip.stops.time %>">
+        <% trip.stops.forEach(function(stop) { %>
+          <input class="mdl-textfield__input" name="time" placeholder="Time" value="<%= stop.time %>">
+        <% }) %>
       <% } else { %>
         <input class="mdl-textfield__input" name="time">
         <label class="mdl-textfield__label">Time</label>
@@ -46,7 +48,9 @@
     </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="stops">
       <% if (trip) { %>
-        <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop" value="<%= trip.stops.stop %>">
+        <% trip.stops.forEach(function(stop) { %>
+          <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop" value="<%= stop.stop %>">
+        <% }) %>
       <% } else { %>
         <input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac2" name="stop" placeholder="Stop">
         <label class="mdl-textfield__label" ></label>

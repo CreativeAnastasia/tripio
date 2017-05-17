@@ -9,7 +9,7 @@ var tripController = {
   index: function(req, res, next) {
     Trip.find({}, (err, trips) => {
       res.render('index', {trips: trips, user: req.user});
-    })
+    });
   },
 
   new: function(req, res, next) {
@@ -18,8 +18,6 @@ var tripController = {
   },
 
   create: function(req, res, next) {
-
-    console.log("req.body", JSON.stringify(req.body));
     var trip = new Trip({
       name: req.body.name,
       tagline: req.body.tagline,
@@ -48,13 +46,27 @@ var tripController = {
         res.redirect('/mytrips');
       });
     });
-
   },
 
   edit: function(req, res, next) {
     Trip.findById(req.params.id, function(err, data) {
       if (err) res.redirect('/trips');
-      res.render('edit');
+      res.render('edit', {trip: trip, user: req.user});
+    });
+  },
+
+  update: function(req, res, next) {
+    Trip.findById(req.params.id, function (err, trip) {
+      console.log('req.body is ', JSON.stringify(req.body))
+      trip.stops.push({
+        time: req.body.time,
+        stop: req.body.stop
+      });
+      console.log('new stops', trip.stops)
+      trip.save().then(function(err, savedTrip) {
+        if (err) return res.redirect('/trips');
+          res.redirect('/mytrips');
+      });
     })
   },
 
@@ -72,13 +84,23 @@ var tripController = {
     Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
       if (err) return res.render('/trips/' + req.params.id + '/edit');
       res.redirect('/trips');
+
     });
   },
 
+
   delete: function(req, res, next) {
-    Trip.findByIdAndRemove(req.params.id, function(err) {
-      if (err) return res.redirect('/');
-      res.redirect('/trips');
+    Trip.findByIdAndRemove(req.params.id, function(err) 
+        if (err) return res.redirect('/');
+        res.redirect('/mytrips');
+      });
+  },
+
+  addrating: function(req, res, next) {
+    Trip.findById(req.params.id, function(err, trip) {
+      trip.rate(req.query.rating, req.user.id, function(ratedTrip) 
+        res.redirect(`/trips/${req.params.id}`);
+      });
     });
   }
 
