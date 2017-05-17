@@ -54,3 +54,5 @@ StarRating.prototype.fillStarsUpToElement = function(el) {
 
 // Run:
 new StarRating();
+
+
