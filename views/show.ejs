@@ -15,7 +15,7 @@
                     <h3><%= trip.avgRating %></h3>
                     <h4><%= trip.tagline %></h4><br>
                 </span>
-                <p>Google Map appears here</p>
+                <div id="map_canvas"></div>
                 <p>
                 <div id="rating">
                   <a href="/trips/<%= trip._id %>/ratings?rating=1"><span>★</span></a>
@@ -38,5 +38,33 @@
     </main>
     </div>
     <% include ./partials/_footer %>
+    <script>
+    $(document).ready(function () {
+      var map;
+      var elevator;
+      var myOptions = {
+          zoom: 1,
+          center: new google.maps.LatLng(0, 0),
+          mapTypeId: 'terrain'
+      };
+      map = new google.maps.Map($('#map_canvas')[0], myOptions);
+
+      var trip = <%- tripJSON %>;
+
+      var addresses = trip.stops.map(function(stop) { return stop.stop; });
+      console.log(addresses);
+
+      for (var x = 0; x < addresses.length; x++) {
+          $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
+              var p = data.results[0].geometry.location
+              var latlng = new google.maps.LatLng(p.lat, p.lng);
+              new google.maps.Marker({
+                  position: latlng,
+                  map: map
+              });
+            })
+          }
+        })
+   </script>
   </body>
 </html>
