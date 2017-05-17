@@ -15,7 +15,11 @@ StarRating.prototype.init = function() {
     this.stars[i].setAttribute('data-count', i);
     this.stars[i].addEventListener('mouseenter', this.enterStarListener.bind(this));
   }
-  document.querySelector('#rating').addEventListener('mouseleave', this.leaveStarListener.bind(this));
+
+  var rating = document.querySelector('#rating');
+  if (rating) {
+    rating.addEventListener('mouseleave', this.leaveStarListener.bind(this));
+  }
 };
 
 /**
