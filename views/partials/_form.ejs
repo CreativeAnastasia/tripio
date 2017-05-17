@@ -58,6 +58,8 @@
     </div>
     <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent" id="addStop">
       <i class="material-icons">add</i>
+      <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent" id="removeStop">
+        <i class="material-icons">remove</i>
     </button>
     <br>
     <div class="mdl-textfield mdl-js-textfield">
@@ -99,11 +101,18 @@ initialize();
   $("#addStop").click(function(e) {
     e.preventDefault();
   //Append a new row of code to the "#stops" div
- +  $("#stops").append(`<div><input class="mdl-textfield__input mdl-js-textfield autocomplete" id="ac[${nextAc}]" name="stop" placeholder="Stop"</div>`)
-    $("#time").append('<div><input class="mdl-textfield__input" name="time" placeholder="Time"</div>');
+  $("#stops").append(`<div><input class="mdl-textfield__input mdl-js-textfield autocomplete dynamic" id="ac[${nextAc}]" name="stop" placeholder="Stop"</div>`)
+    $("#time").append('<div><input class="mdl-textfield__input dynamic" name="time" placeholder="Time"</div>');
 
    var auto = new google.maps.places.Autocomplete(document.getElementById(`ac[${nextAc}]`));
    auto.inputId = document.getElementById(`ac[${nextAc}]`).id;
    nextAc++
   });
+  </script>
+
+  <script>
+    $("#removeStop").click(function(e){
+      e.preventDefault();
+      $('#stops').remove(".dynamic")
+    })
   </script>
