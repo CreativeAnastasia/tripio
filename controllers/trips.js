@@ -27,20 +27,10 @@ var tripController = {
       summary: req.body.summary,
       tags: req.body.tags
     });
-    if (typeof req.body.stop === "object"){
-      req.body.stop.forEach(function(stop, i){
-        console.log('i is ', i)
-        trip.stops.push({
-          time: req.body.time[i],
-          stop: req.body.stop[i]
-        });
-      })
-    } else {
-      trip.stops.push({
-        time: req.body.time,
-        stop: req.body.stop
-      });
-    }
+    trip.stops.push({
+      time: req.body.time,
+      stop: req.body.stop
+    });
     trip.save((err) => {
       req.user.trips.push(trip._id);
       req.user.save(function(err) {
@@ -67,15 +57,15 @@ var tripController = {
 
   update: function(req, res, next) {
     Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
-      if (err) return res.render('/trips/' + req.params.id + '/edit');
-      res.redirect('/trips');
+      if (err) return res.redirect('/trips');
+      res.redirect('/mytrips');
     });
   },
 
   delete: function(req, res, next) {
     Trip.findByIdAndRemove(req.params.id, function(err) {
         if (err) return res.redirect('/');
-        res.redirect('/trips');
+        res.redirect('/mytrips');
       });
     },
 
