@@ -48,6 +48,16 @@ var tripController = {
     });
   },
 
+  show: function(req, res, next) {
+    Trip.findById(req.params.id, (err, trip) => {
+      var tripjson = trip.toObject();
+      tripjson = JSON.stringify(tripjson)
+      console.log(tripjson)
+      console.log('typeof', typeof tripjson)
+      res.render('show', {trip: trip, user: req.user, tripJSON: tripjson});
+    })
+  },
+
   edit: function(req, res, next) {
     Trip.findById(req.params.id, function(err, data) {
       if (err) res.redirect('/trips');
@@ -84,13 +94,11 @@ var tripController = {
     Trip.findByIdAndUpdate(req.params.id, req.body, function(err, trip) {
       if (err) return res.render('/trips/' + req.params.id + '/edit');
       res.redirect('/trips');
-
     });
   },
 
-
   delete: function(req, res, next) {
-    Trip.findByIdAndRemove(req.params.id, function(err) 
+    Trip.findByIdAndRemove(req.params.id, function(err) {
         if (err) return res.redirect('/');
         res.redirect('/mytrips');
       });
@@ -98,9 +106,11 @@ var tripController = {
 
   addrating: function(req, res, next) {
     Trip.findById(req.params.id, function(err, trip) {
-      trip.rate(req.query.rating, req.user.id, function(ratedTrip) 
+      trip.rate(req.query.rating, req.user.id, function(ratedTrip) {
         res.redirect(`/trips/${req.params.id}`);
       });
+      if (err) return res.redirect('/');
+        res.redirect('/trips');
     });
   }
 
