@@ -44,10 +44,11 @@
     <% include ./partials/_footer %>
     <script>
     $(document).ready(function () {
+      var address = location
       var map;
       var elevator;
       var myOptions = {
-          zoom: 1,
+          zoom: 10,
           center: new google.maps.LatLng(0, 0),
           mapTypeId: 'terrain'
       };
@@ -59,6 +60,7 @@
           $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
               var p = data.results[0].geometry.location
               var latlng = new google.maps.LatLng(p.lat, p.lng);
+              map.setCenter(latlng)
               new google.maps.Marker({
                   position: latlng,
                   map: map
