@@ -12,23 +12,21 @@
             <div class="mdl-cell mdl-cell--6-col">
                 <span class="tripio-show">
                     <h3><%= trip.name %></h3>
-                    <h3><%= trip.avgRating %></h3>
                     <h4><%= trip.tagline %></h4><br>
                 </span>
                 <div id="map_canvas"></div>
                 <p>
                 <div id="rating">
-                  <a href="/trips/<%= trip._id %>/ratings?rating=1"><span>★</span></a>
-                  <a href="/trips/<%= trip._id %>/ratings?rating=2"><span>★</span></a>
-                  <a href="/trips/<%= trip._id %>/ratings?rating=3"><span>★</span></a>
-                  <a href="/trips/<%= trip._id %>/ratings?rating=4"><span>★</span></a>
-                  <a href="/trips/<%= trip._id %>/ratings?rating=5"><span>★</span></a>
+                    <h3><%= trip.avgRating %></h3>
+
                 </div>
                     <%= trip.location %>
                     <br>
                     <%= trip.summary %><br><br>
-                    <%= trip.stops.time %>&nbsp;&nbsp;@&nbsp;&nbsp;
-                    <%= trip.stops.stop %><br><br>
+                    <% trip.stops.forEach(function(stop) { %>
+                      <%= stop.time %>&nbsp;&nbsp;@&nbsp;&nbsp;
+                      <%= stop.stop %><br><br>
+                    <% }) %>
                     Tags: <%= trip.tags %>
                 </p>
             </div>
@@ -66,5 +64,10 @@
           }
         })
    </script>
+
+   <script>
+      var ratingPercentage = <%= trip.avgRating %>;
+      document.getElementById(`ratingEl`).style.width=`${ratingPercentage}%`;
+    </script>
   </body>
 </html>
