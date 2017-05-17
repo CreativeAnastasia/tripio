@@ -58,9 +58,10 @@ a {
 }
 
 #rating {
+  left: 0;
+  top: 0;
   text-align: center;
   perspective: 250px;
-  position: absolute;
   top: 40%;
   width: 100%;
 }
