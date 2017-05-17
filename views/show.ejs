@@ -12,6 +12,14 @@
             <div class="mdl-cell mdl-cell--6-col">
                 <span class="tripio-show">
                     <h3><%= trip.name %></h3>
+
+                    <%= trip.avgRating %>
+                      <div class="tripio-rating">
+                          <div id="rating-show">
+                              <img class="tripio-stars" src="../images/transparent_stars.png" alt="Start">
+                          </div>
+                      </div>
+
                     <h4><%= trip.tagline %></h4><br>
                 </span>
                 <div id="map_canvas"></div>
@@ -69,6 +77,11 @@
           }
         })
    </script>
+
+   <script>
+          var ratingPercentage = <%=  trip.avgRating/5 * 100 %>;
+          document.getElementById(`rating-show`).style.width=`${ratingPercentage}%`;
+    </script>
   </body>
 </html>
 Contact GitHub API Training Shop Blog About
