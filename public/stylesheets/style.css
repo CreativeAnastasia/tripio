@@ -74,7 +74,7 @@ h7 {
 .tripio-card > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('../images/sample.png') center / cover;
+  background: center / cover;
 }
 
 .mdl-card__menu > a {
