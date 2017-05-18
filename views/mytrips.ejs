@@ -11,8 +11,8 @@
     <div class="mdl-grid">
       <% user.trips.forEach(function(trip, index) { %>
         <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
-        <img src="<%= trip.pictureUrl %>" alt="pic">
-        <div class="mdl-card__title">
+            <img class="trip-pic" src="<%= trip.pictureUrl %>" alt="pic">
+            <div class="mdl-card__title">
           <h2 class="mdl-card__title-text"><%= trip.name %></h2>
         </div>
         <div class="mdl-card__supporting-text">
@@ -54,7 +54,8 @@
     </div>
     </main>
     </div>
-    <script> //delete confirmation
+    <!-- delete trip confirmation dialog -->
+    <script>
       var dialogs = document.querySelectorAll('dialog');
       var showDialogButton = document.querySelectorAll('.delete-trip');
       showDialogButton.forEach(function(button, i) {
@@ -70,15 +71,16 @@
         })
       });
     </script>
-    <script> //ratings
+    <!-- ratings -->
+    <script>
         var ratings = [
         <% user.trips.forEach(function(trip, index) { %>
-            <%= trip.avgRating %>,
+          <%= trip.avgRating %>,
         <% }) %>
         ];
         ratings.forEach(function(rating, idx) {
-           var ratingPercentage = rating / 5 * 100;
-           document.getElementById(`rating-${idx}`).style.width=`${ratingPercentage}%`;
+          var ratingPercentage = rating / 5 * 100;
+          document.getElementById(`rating-${idx}`).style.width=`${ratingPercentage}%`;
         });
      </script>
   </body>

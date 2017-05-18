@@ -8,6 +8,7 @@
     <main class="mdl-layout__content">
     <div class="page-content tripio-content">
     <div class="mdl-grid">
+        <!-- search bar -->
         <div class="mdl-cell mdl-cell--12-col" id="search">
             <form action="#">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" id="search-field">
@@ -15,15 +16,15 @@
                   <i class="material-icons">search</i>
                 </label>
                 <div class="mdl-textfield__expandable-holder">
-                  <input class="mdl-textfield__input" type="text" id="sample6">
-                  <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                  <input class="mdl-textfield__input" type="text" id="sample6" placeholder="Search for trips" onkeyup="searchTrips()">
+                  <label class="mdl-textfield__label" for="sample-expandable">Search Bar</label>
                 </div>
               </div>
             </form>
         </div>
-
+        <!-- all trip cards -->
         <% trips.forEach(function(trip, index) { %>
-            <div class="tripio-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
+            <div class="tripio-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col" data-tags="<%= trip.tags.join() %>">
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text"><%= trip.name %></h2>
             </div>
