@@ -101,8 +101,8 @@ initialize();
   $("#addStop").click(function(e) {
     e.preventDefault();
   //Append a new row of code to the "#stops" div
-  $("#stops").append(`<div><input class="mdl-textfield__input mdl-js-textfield autocomplete dynamicstop" id="ac[${nextAc}]" name="stop" placeholder="Stop"</div>`)
-    $("#time").append('<div><input type="time" class="mdl-textfield__input dynamictime" name="time" placeholder="Time"</div>');
+  $("#stops").append(`<div><input class="mdl-textfield__input mdl-js-textfield autocomplete dynamicstop" id="ac[${nextAc}]" name="stop" placeholder="Stop"</div> <br>`)
+    $("#time").append('<div><input type="time" class="mdl-textfield__input dynamictime" name="time" placeholder="Time"</div> <br>');
 
    var auto = new google.maps.places.Autocomplete(document.getElementById(`ac[${nextAc}]`));
    auto.inputId = document.getElementById(`ac[${nextAc}]`).id;
