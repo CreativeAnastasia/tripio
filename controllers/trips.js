@@ -18,17 +18,26 @@ var tripController = {
   },
 
   create: function(req, res, next) {
+    if (req.body.pictureUrl === "") {
       var trip = new Trip({
       name: req.body.name,
       tagline: req.body.tagline,
-      location: req.body.location,
+      summary: req.body.summary,
+      tags: req.body.tags
+    });
+     } else {
+      var trip = new Trip({
+      name: req.body.name,
+      tagline: req.body.tagline,
       summary: req.body.summary,
       pictureUrl: req.body.pictureUrl,
       tags: req.body.tags
     });
+    }
+
+    if (req.body.location) trip.location = req.body.location;
     if (typeof req.body.stop === "object"){
       req.body.stop.forEach(function(stop, i){
-        console.log('i is ', i)
         trip.stops.push({
           time: req.body.time[i],
           stop: req.body.stop[i]
@@ -42,7 +51,6 @@ var tripController = {
     }
     trip.save((err) => {
       req.user.trips.push(trip._id);
-      console.log(req.user)
       req.user.save(function(err) {
         if (err) return res.redirect('/trips/new');
         res.redirect('/mytrips');
@@ -54,8 +62,6 @@ var tripController = {
     Trip.findById(req.params.id, (err, trip) => {
       var tripjson = trip.toObject();
       tripjson = JSON.stringify(tripjson)
-      console.log(tripjson)
-      console.log('typeof', typeof tripjson)
       res.render('show', {trip: trip, user: req.user, tripJSON: tripjson});
     })
   },
