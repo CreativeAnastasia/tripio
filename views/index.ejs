@@ -24,30 +24,38 @@
         </div>
         <!-- all trip cards -->
         <% trips.forEach(function(trip, index) { %>
-            <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col" data-tags="<%= trip.tags.join() %>">
-            <img class="trip-pic" src="<%= trip.pictureUrl %>" alt="pic">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text"><%= trip.name %></h2>
-            </div>
-            <div class="mdl-card__supporting-text">
-                <%= trip.tagline %><br>
-                <%= trip.location %>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
-                <div class="tripio-rating">
-                    <div id="<%= 'rating-' + index %>">
-                        <img class="tripio-stars" src="images/transparent_stars.png" alt="Start">
+            <div class="tripio-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col" data-tags="<%= trip.tags.join() %>">
+
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text"><%= trip.name %></h2>
+                </div>
+
+                <div class="mdl-card__media">
+                    <img class="tripio-card-pic" src="<%= trip.pictureUrl %>" alt="tripio-card-picture">
+                </div>
+
+                <div class="mdl-card__supporting-text">
+                    <%= trip.tagline %><br>
+                    <%= trip.location %>
+                </div>
+
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
+                    <div class="tripio-rating">
+                        <div id="<%= 'rating-' + index %>">
+                            <img class="tripio-stars" src="images/transparent_stars.png" alt="Start">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mdl-card__menu">
-                <a href="https://www.google.com" target="_blank">
-                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                    <i class="material-icons">share</i>
-                </button>
-                </a>
-            </div>
+
+                <div class="mdl-card__menu">
+                    <a href="https://www.google.com" target="_blank">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                        <i class="material-icons">share</i>
+                    </button>
+                    </a>
+                </div>
+
             </div><br>
         <% }) %>
     </div>
