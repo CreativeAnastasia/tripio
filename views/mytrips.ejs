@@ -7,7 +7,7 @@
   <% include ./partials/_nav %>
     <main class="mdl-layout__content">
     <div class="page-content tripio-content">
-    <H4 class="tripio-my-trips mdl-typography--text-uppercase">my trips</H4>
+    <H4 class="tripio-my-trips"><%= user.name %>'s Trips</H4>
     <div class="mdl-grid">
         <% user.trips.forEach(function(trip, index) { %>
             <div class="tripio-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">

@@ -6,11 +6,11 @@
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <% if (user) { %>
           <h7>Hi, <%= user.name %> </h7>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/trips/new">Create Trip</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/mytrips">My Trips</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/logout">Logout</a>
+            <a class="mdl-navigation__link fixed-link" href="/trips/new">Create Trip</a>
+            <a class="mdl-navigation__link fixed-link" href="/mytrips">My Trips</a>
+            <a class="mdl-navigation__link fixed-link" href="/logout">Log Out</a>
           <% } else { %>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/auth/facebook">Login</a>
+            <a class="mdl-navigation__link fixed-link" href="/auth/facebook">Log In</a>
           <% } %>
         </nav>
       </div>
@@ -24,13 +24,13 @@
       <% if (user) { %>
         <br><h7> Hi, <%= user.name %> </h7><br>
         <div class="navbar-drawer-separator"></div>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/trips/new">Create Trip</a>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/mytrips">My Trips</a>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/logout">Logout</a>
+        <a class="mdl-navigation__link drawer-link" href="/trips/new">Create Trip</a>
+        <a class="mdl-navigation__link drawer-link" href="/mytrips">My Trips</a>
+        <a class="mdl-navigation__link drawer-link" href="/logout">Log Out</a>
       <% } else { %>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/auth/facebook">Login</a>
+        <a class="mdl-navigation__link drawer-link" href="/auth/facebook">Log In</a>
       <% } %>
       <div class="navbar-drawer-separator"></div>
-      <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="">About</a>
+      <a class="mdl-navigation__link drawer-link" href="">About</a>
     </nav>
   </div>
