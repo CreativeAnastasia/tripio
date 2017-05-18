@@ -3,7 +3,7 @@ h7 {
 }
 
 .mdl-layout__content {
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .mdl-navigation__link {
@@ -85,7 +85,7 @@ h7 {
   position: absolute;
   right: 0;
   bottom: 0;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   padding-right: 10px;
 }
 
@@ -118,18 +118,20 @@ h7 {
 }
 
 #rating {
-  left: 0;
-  top: 0;
-  text-align: center;
-  perspective: 250px;
-  top: 40%;
-  width: 100%;
+  /*left: 0;*/
+  /*top: 0;*/
+  /*text-align: right;*/
+  perspective: 400px;
+  /*top: 40%;*/
+  /*width: 100%;*/
+  float: right;
+  display: inline-block;
 }
 
 #rating span {
   cursor: pointer;
-  font-size: 20px;
-  padding: 0 10px;
+  font-size: 25px;
+  padding: 0 1px;
   color: #000000;
   opacity: .7;
   transition: all 150ms;
