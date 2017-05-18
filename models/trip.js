@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var stopSchema = new Schema ({
   stop: {type: String, required: true, minlength: 1},
-  time: {type: Number, required: true, minlength: 1}
+  time: {type: String, required: true, minlength: 1}
 });
 
 var ratingSchema = new Schema ({
