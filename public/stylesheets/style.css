@@ -5,13 +5,22 @@ a {
   color: #00B7FF;
 }
 
+h7 {
+  padding-right: 20px;
+  padding-left: 40px;
+}
+
 .mdl-navigation__link {
   opacity: 1;
-
 }
+
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
   color: teal;
+}
+
+.mdl-layout__header-row {
+  padding-right: 0;
 }
 
 .fixed-link {
@@ -42,6 +51,7 @@ a {
   height: 1px;
   background-color: #dcdcdc;
   margin: 8px 0;
+  margin-bottom: 15px;
 }
 
 .tripio-card > .mdl-card__title {

@@ -5,6 +5,7 @@
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <% if (user) { %>
+          <h7>Hi, <%= user.name %> </h7>
             <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/trips/new">Create Trip</a>
             <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/mytrips">My Trips</a>
             <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/logout">Logout</a>
@@ -21,6 +22,7 @@
     <nav class="mdl-navigation drawer-nav">
       <div class="navbar-drawer-separator"></div>
       <% if (user) { %>
+      <h7> Hi, <%= user.name %> </h7>
         <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/trips/new">Create Trip</a>
         <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/mytrips">My Trips</a>
         <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/logout">Logout</a>
