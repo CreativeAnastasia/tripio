@@ -71,7 +71,7 @@ h7 {
   color: #fff;
 }
 
-.tripio-card > .mdl-card__title {
+.tripio-card > .mdl-card__title, .mdl-card__title {
   color: #fff;
   height: 176px;
   position: absolute;

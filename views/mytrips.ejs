@@ -11,43 +11,45 @@
     <div class="mdl-grid">
       <% user.trips.forEach(function(trip, index) { %>
         <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
-            <img class="trip-pic" src="<%= trip.pictureUrl %>" alt="pic">
-            <div class="mdl-card__title">
-          <h2 class="mdl-card__title-text"><%= trip.name %></h2>
-        </div>
-        <div class="mdl-card__supporting-text">
-          <%= trip.tagline %><br>
-          <%= trip.location %>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
-          <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>/edit">Edit This Trip</a>
-          <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
-            <button type="button" class="delete-trip mdl-button mdl-js-button mdl-button--primary">Delete This Trip</button>
-              <dialog class="mdl-dialog">
-                <h3 class="mdl-dialog__title">Delete Trip</h3>
-                <div class="mdl-dialog__content">
-                  <p>Are you sure you want to delete this trip? This action cannot be undone.</p>
-                </div>
-                <div class="mdl-dialog__actions">
-                  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Delete</button>
-                  <button type="button" class="mdl-button close mdl-js-button mdl-button--raised mdl-js-ripple-effect">Cancel</button>
-                </div>
-              </dialog>
-          </form>
-          <div class="tripio-rating">
-            <div id="<%= 'rating-' + index %>">
-                <img class="tripio-stars" src="images/transparent_stars.png" alt="Start">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text"><%= trip.name %></h2>
+          </div>
+          <div class="mdl-card__media">
+            <img class="tripio-card-pic" src="<%= trip.pictureUrl %>" alt="tripio-card-picture">
+          </div>
+          <div class="mdl-card__supporting-text">
+            <%= trip.tagline %><br>
+            <%= trip.location %>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
+            <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>/edit">Edit This Trip</a>
+            <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
+              <button type="button" class="delete-trip mdl-button mdl-js-button mdl-button--primary">Delete This Trip</button>
+                <dialog class="mdl-dialog">
+                  <h3 class="mdl-dialog__title">Delete Trip</h3>
+                  <div class="mdl-dialog__content">
+                    <p>Are you sure you want to delete this trip? This action cannot be undone.</p>
+                  </div>
+                  <div class="mdl-dialog__actions">
+                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Delete</button>
+                    <button type="button" class="mdl-button close mdl-js-button mdl-button--raised mdl-js-ripple-effect">Cancel</button>
+                  </div>
+                </dialog>
+            </form>
+            <div class="tripio-rating">
+              <div id="<%= 'rating-' + index %>">
+                  <img class="tripio-stars" src="images/transparent_stars.png" alt="Start">
+              </div>
             </div>
           </div>
-        </div>
-        <div class="mdl-card__menu">
-          <a href="https://www.google.com" target="_blank">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">share</i>
-          </button>
-          </a>
-        </div>
+          <div class="mdl-card__menu">
+            <a href="https://www.google.com" target="_blank">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+              <i class="material-icons">share</i>
+            </button>
+            </a>
+          </div>
         </div><br>
       <% }) %>
     </div>
