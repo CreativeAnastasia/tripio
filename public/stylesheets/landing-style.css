@@ -1,0 +1,129 @@
+
+#text-landing-container {
+  position:absolute;
+  color:#fff;
+  top:50%;
+  left:50%;
+  padding:15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-size: 3em;
+}
+
+#landing-text {
+  position:absolute;
+  color:#fff;
+  top:50%;
+  left:50%;
+  padding:15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-size: 3em;
+  padding-bottom: 300px;
+}
+
+.enter {
+  position:absolute;
+  color:#fff;
+  top:50%;
+  left:50%;
+  padding:15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin-top: 150px;"
+}
+
+.enter a{
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.enter a:hover{
+  color: rgb(124,77,255);
+}
+
+#pin-img{
+  position:absolute;
+  color:#fff;
+  top:50%;
+  left:50%;
+  padding:15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-size: 3em;
+  padding-bottom: 500px;
+}
+#pin-img img {
+  height: 100px;
+  width: 100px;
+}
+a:hover {
+  text-decoration: underline;
+  color:
+}
+
+@media only screen and (max-device-width: 480px) {
+ body {
+   font-size: .5em;
+ }
+ .enter {
+   position:absolute;
+   color:#fff;
+   top:50%;
+   left:50%;
+   padding:15px;
+   -ms-transform: translateX(-50%) translateY(-50%);
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   margin-top: 100px;"
+ }
+ #landing-text {
+   position:absolute;
+   color:#fff;
+   top:50%;
+   left:50%;
+   padding:15px;
+   -ms-transform: translateX(-50%) translateY(-50%);
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   text-align: center;
+   font-size: 3em;
+   padding-bottom: 200px;
+ }
+ #pin-img{
+   position:absolute;
+   color:#fff;
+   top:50%;
+   left:50%;
+   padding:15px;
+   -ms-transform: translateX(-50%) translateY(-50%);
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   text-align: center;
+   font-size: 3em;
+   padding-bottom: 370px;
+ }
+ #pin-img img {
+   height: 50px;
+   width: 50px;
+ }
+ #text-landing-container {
+   position:absolute;
+   color:#fff;
+   top:50%;
+   left:50%;
+   padding-top: 50px;
+   -ms-transform: translateX(-50%) translateY(-50%);
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   text-align: center;
+   font-size: 3em;
+ }
+	}
