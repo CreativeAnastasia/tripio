@@ -55,4 +55,14 @@ StarRating.prototype.fillStarsUpToElement = function(el) {
 // Run:
 new StarRating();
 
+// Search trips by tags
+function searchTrips() {
+  var input, filter, tripCards;
+  input = document.getElementById('sample6');
+  filter = input.value.toLowerCase();
+  tripCards = document.querySelectorAll('.tripio-card');
+  tripCards.forEach(function(card) {
+    card.style.display = (card.attributes.getNamedItem('data-tags').value.includes(filter)) ? '' : 'none';
+  });
+};
 

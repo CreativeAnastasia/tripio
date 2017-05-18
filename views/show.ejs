@@ -35,8 +35,9 @@
           </div>
         <% } %>
         <b><%= trip.location %></b><br><br>
-        <% trip.stops.forEach(function(stop) { %>
-          <%= stop.time %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <% trip.stops.forEach(function(stop, index) { %>
+          <%= index + 1 %>)&nbsp;&nbsp;
+          <%= stop.time %>&nbsp;&nbsp;&nbsp;
           <%= stop.stop %><br><br>
         <% }) %>
         Tags: <%= trip.tags %>
