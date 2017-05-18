@@ -1,4 +1,10 @@
 
+/*body {
+  background-image: url("/images/map.svg");
+  background-size: 20%;
+  background-repeat: no-repeat;
+}*/
+
 #text-landing-container {
   position:absolute;
   color:#fff;
@@ -64,9 +70,20 @@
   height: 100px;
   width: 100px;
 }
-a:hover {
+a:hover  {
   text-decoration: underline;
-  color:
+}
+
+.tripType{
+  text-decoration: underline;
+}
+
+.cityType{
+  text-decoration: underline;
+}
+
+#in{
+
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -82,7 +99,7 @@ a:hover {
    -ms-transform: translateX(-50%) translateY(-50%);
    -webkit-transform: translate(-50%,-50%);
    transform: translate(-50%,-50%);
-   margin-top: 100px;"
+   margin-top: 200px;"
  }
  #landing-text {
    position:absolute;
@@ -119,7 +136,7 @@ a:hover {
    color:#fff;
    top:50%;
    left:50%;
-   padding-top: 50px;
+   padding-top: 100px;
    -ms-transform: translateX(-50%) translateY(-50%);
    -webkit-transform: translate(-50%,-50%);
    transform: translate(-50%,-50%);
