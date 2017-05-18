@@ -112,8 +112,10 @@ var tripController = {
         res.redirect(`/trips/${req.params.id}`);
       });
     });
+  },
+  landing: function(req, res) {
+    res.render('landing')
   }
-
 };
 
 module.exports = tripController;
