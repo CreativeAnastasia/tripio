@@ -14,6 +14,13 @@ passport.use(new FacebookStrategy({
     User.findOne({ 'facebookId': profile.id }, function (err, user) {
       if (err) return cd(err);
       if (user) {
+        if (!user.photo) {
+          user.photo = profile.photos[0].value;
+          user.save(function(err) {
+            if (err) return cb(err);
+            return cb(null, user);
+          });
+        }
         return cb(null, user);
       } else {
         var newUser = new User({

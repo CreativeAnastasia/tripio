@@ -5,6 +5,7 @@
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <% if (user) { %>
+            <img class="circle" src="<%= user.photo %>" alt="avatar">
           <h7>Hi, <%= user.name %> </h7>
             <a class="mdl-navigation__link fixed-link" href="/trips/new">Create Trip</a>
             <a class="mdl-navigation__link fixed-link" href="/mytrips">My Trips</a>
