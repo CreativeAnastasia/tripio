@@ -134,6 +134,6 @@ h7 {
 }
 
 #map_canvas {
-  width: 500px;
-  height: 500px;
+  height: 100%;
+  width: 100%;
 }
