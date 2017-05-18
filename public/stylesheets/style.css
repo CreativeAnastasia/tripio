@@ -2,6 +2,19 @@ h7 {
   padding: 0px 20px 0px 40px;
 }
 
+#search {
+  margin: 0 auto;
+  height: 40px;
+}
+
+#search-field {
+  padding: 0px 0px 0px 1080px;
+}
+
+#search-icon {
+  top: 0px;
+}
+
 .mdl-layout__content {
   padding-bottom: 50px;
 }
