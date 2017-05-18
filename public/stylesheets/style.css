@@ -8,11 +8,7 @@ h7 {
 }
 
 #search-field {
-  padding: 0px 0px 0px 1080px;
-}
-
-#search-icon {
-  top: 0px;
+  bottom: 15px;
 }
 
 .mdl-layout__content {
@@ -71,19 +67,26 @@ h7 {
   -moz-border-radius: 50px;
 }
 
+.tripio-card > .mdl-card__menu {
+  color: #fff;
+}
+
 .tripio-card > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: center / cover;
+  position: absolute;
+  text-shadow: 1px 1px #2F4F4F;
 }
 
-.mdl-card__menu > a {
+img.tripio-card-pic {
+  object-fit: cover;
+  height: 180px;
+  width: 418.56px;
+
+*/}
+
+.mdl-card__menu > a { /*this is the share icon link*/
   color: white;
-}
-
-.trip-pic {
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .tripio-rating-show-page {
@@ -124,10 +127,6 @@ h7 {
   margin: 0 auto;
   width: 125px;
   height: 30px;
-}
-
-.tripio-card > .mdl-card__menu {
-  color: #fff;
 }
 
 .tripio-show, .tripio-my-trips {
