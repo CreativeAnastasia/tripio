@@ -18,11 +18,12 @@ var tripController = {
   },
 
   create: function(req, res, next) {
-    var trip = new Trip({
+      var trip = new Trip({
       name: req.body.name,
       tagline: req.body.tagline,
       location: req.body.location,
       summary: req.body.summary,
+      pictureUrl: req.body.pictureUrl,
       tags: req.body.tags
     });
     if (typeof req.body.stop === "object"){

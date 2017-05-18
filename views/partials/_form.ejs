@@ -35,6 +35,14 @@
         <label class="mdl-textfield__label">Summary</label>
       <% } %>
     </div>
+    <div class="mdl-textfield mdl-js-textfield">
+      <% if (trip) { %>
+        <input class="mdl-textfield__input" name="pictureUrl" placeholder="Picture URL" value="<%= trip.pictureUrl %>">
+      <% } else { %>
+        <input class="mdl-textfield__input" name="pictureUrl">
+        <label class="mdl-textfield__label">Picture URL</label>
+      <% } %>
+    </div>
     <br>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="time">
       <% if (trip) { %>
