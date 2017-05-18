@@ -8,11 +8,7 @@ h7 {
 }
 
 #search-field {
-  padding: 0px 0px 0px 1080px;
-}
-
-#search-icon {
-  top: 0px;
+  bottom: 15px;
 }
 
 .mdl-layout__content {
@@ -74,16 +70,17 @@ h7 {
 .tripio-card > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: center / cover;
+  /*background: center / cover;*/
 }
 
 .mdl-card__menu > a {
   color: white;
 }
 
-.trip-pic {
+img.trip-pic {
   max-width: 100%;
   max-height: 100%;
+  background: url('../assets/demos/welcome_card.jpg') center / cover;
 }
 
 .tripio-rating-show-page {
