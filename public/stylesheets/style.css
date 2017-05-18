@@ -67,25 +67,27 @@ h7 {
   -moz-border-radius: 50px;
 }
 
+.tripio-card > .mdl-card__menu {
+  color: #fff;
+}
+
 .tripio-card > .mdl-card__title {
   color: #fff;
   height: 176px;
-  /*background: center / cover;*/
+  position: absolute;
+  text-shadow: 1px 1px #2F4F4F;
 }
 
-.mdl-card__menu > a {
+img.tripio-card-pic {
+  object-fit: cover;
+  height: 180px;
+  width: 418.56px;
+
+*/}
+
+.mdl-card__menu > a { /*this is the share icon link*/
   color: white;
 }
-
-img.trip-pic {
-  max-width: 100%;
-  max-height: 100%;
-  background: url('../assets/demos/welcome_card.jpg') center / cover;
-}
-.mdl-card__menu > a {
-  color: white;
-}
-
 
 .tripio-rating-show-page {
   width: 125px;
@@ -125,10 +127,6 @@ img.trip-pic {
   margin: 0 auto;
   width: 125px;
   height: 30px;
-}
-
-.tripio-card > .mdl-card__menu {
-  color: #fff;
 }
 
 .tripio-show, .tripio-my-trips {
