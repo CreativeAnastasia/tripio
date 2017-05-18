@@ -55,6 +55,14 @@ h7 {
   margin-bottom: 15px;
 }
 
+.circle {
+  height: 65%;
+  margin-right: -30px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+}
+
 .tripio-card > .mdl-card__title {
   color: #fff;
   height: 176px;
