@@ -1,10 +1,3 @@
-body {
-}
-
-a {
-  color: #00B7FF;
-}
-
 h7 {
   padding-right: 20px;
   padding-left: 40px;
@@ -13,7 +6,6 @@ h7 {
 .mdl-navigation__link {
   opacity: 1;
 }
-
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
   color: teal;
@@ -67,6 +59,10 @@ h7 {
   color: #fff;
   height: 176px;
   background: url('../images/sample.png') center / cover;
+}
+
+.mdl-card__menu > a {
+  color: white;
 }
 
 .tripio-rating {
