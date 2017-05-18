@@ -1,6 +1,6 @@
 # Tripio: Planning Made Easy
 
-By Sam Skelton, Anastasiya Varanetskaya, & Julia Yi
+By [Sam Skelton](https://github.com/skeltonsam), [Anastasiya Varanetskaya](https://github.com/CreativeAnastasia), & [Julia Yi](https://github.com/juliamijiyi)
 
 ![](screenshot)
 ![](screenshot)
