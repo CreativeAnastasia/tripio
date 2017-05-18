@@ -90,6 +90,7 @@ var tripController = {
     })
   },
 
+
   delete: function(req, res, next) {
     Trip.findByIdAndRemove(req.params.id, function(err) {
         if (err) return res.redirect('/');
