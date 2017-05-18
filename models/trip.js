@@ -16,9 +16,9 @@ var tripSchema = new Schema({
   tagline: String,
   location: String,
   summary: String,
+  pictureUrl: {type: String, default: "https://s3.amazonaws.com/imgserv.ownlocal.com/travel/travel-agency/travel-agency08-640x480%3E.jpg"},
   stops: [stopSchema],
   tags: [{type: String}],
-  pictureUrl: { type:String, default: "https://s3.amazonaws.com/imgserv.ownlocal.com/travel/travel-agency/travel-agency08-640x480%3E.jpg"},
   ratings: [ratingSchema]
 });
 
