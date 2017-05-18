@@ -74,17 +74,17 @@ h7 {
 .tripio-card > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: center / cover;
-}
-
-.mdl-card__menu > a {
-  color: white;
+  /*background: center / cover;*/
 }
 
 .trip-pic {
   max-width: 100%;
   max-height: 100%;
 }
+.mdl-card__menu > a {
+  color: white;
+}
+
 
 .tripio-rating-show-page {
   width: 125px;
