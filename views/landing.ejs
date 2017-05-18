@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Landing</title>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-deep_purple.min.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body style="background-color: rgb(0,150,136);">
+  <main>
+  <div>
+    <div id="landing-text">Tripio is a site for finding...</div>
+  </div>
+<div>
+  <div id="text-landing-container">
+    <span class="tripType"></span> <br> <br> <span>in</span><br> <br> <span class="cityType"></span>
+ </div>
+ <div style="position:absolute; color:#fff; top:50%; left:50%; padding:15px; -ms-transform: translateX(-50%) translateY(-50%); -webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%); margin-top: 150px;">
+   <a style="color:#fff; font-size:3em; " href="/trips">ENTER</a>
+ </div>
+</div>
+</main>
+
+<script>
+	$(function(){
+		$(".tripType").typed({
+			strings: ["Architecture tours", "Bar crawls", "Taco tours", "Dumpling crawls"],
+			typeSpeed: 0,
+      backSpeed: 1,
+      loop: true,
+      showCursor: false
+		});
+	});
+  $(function(){
+		$(".cityType").typed({
+			strings: ["Los Angeles", "London", "Mexico City", "Seoul"],
+			typeSpeed: 0,
+      backSpeed: 1,
+      loop: true,
+      showCursor: false
+		});
+	});
+</script>
+
+</body>
+</html>
