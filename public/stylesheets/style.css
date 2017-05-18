@@ -75,18 +75,18 @@ h7 {
   color: #fff;
   height: 176px;
   position: absolute;
-  text-shadow: 1px 1px #2F4F4F;
+  text-shadow: 1px 1px black;
 }
 
 img.tripio-card-pic {
   object-fit: cover;
   height: 180px;
   width: 418.56px;
+}
 
-*/}
-
-.mdl-card__menu > a { /*this is the share icon link*/
+.mdl-card__menu > a {
   color: white;
+  opacity: 1;
 }
 
 .tripio-rating-show-page {

@@ -14,7 +14,6 @@ var tripController = {
 
   new: function(req, res, next) {
     res.render('new', {trip: false, user: req.user});
-    console.log("user in new    ", user);
   },
 
   create: function(req, res, next) {
@@ -34,7 +33,6 @@ var tripController = {
       tags: req.body.tags
     });
     }
-
     if (req.body.location) trip.location = req.body.location;
     if (typeof req.body.stop === "object"){
       req.body.stop.forEach(function(stop, i){
@@ -74,7 +72,11 @@ var tripController = {
   },
 
   update: function(req, res, next) {
-    Trip.findByIdAndUpdate(req.params.id, req.body, function (err, trip) {
+    var userHasTrip = req.user.trips.some(trip => {
+      return trip.equals(req.params.id);
+    });
+    if (!userHasTrip) return res.redirect('/');
+    Trip.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, trip) {
       trip.stops = [];
       if (typeof req.body.stop === "object"){
         req.body.stop.forEach(function(stop, i){
@@ -96,7 +98,6 @@ var tripController = {
       });
     })
   },
-
 
   delete: function(req, res, next) {
     Trip.findByIdAndRemove(req.params.id, function(err) {
