@@ -41,17 +41,17 @@
   -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  margin-top: 150px;"
+  margin-top: 175px;
+  border: 5px solid white;
+  border-radius: 5%
 }
 
-.enter a{
+a{
+  padding-top: 20px;
   text-decoration: none;
   font-weight: bold;
 }
 
-.enter a:hover{
-  color: rgb(124,77,255);
-}
 
 #pin-img{
   position:absolute;

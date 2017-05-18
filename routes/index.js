@@ -5,7 +5,7 @@ var passport = require('passport');
 
 
 // The root route renders our only view
-router.get('/', tripController.index);
+router.get('/', tripController.landing);
 router.get('/landing', tripController.landing);
 
 
