@@ -5,11 +5,13 @@
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation mdl-layout--large-screen-only">
           <% if (user) { %>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/trips/new">Create Trip</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/mytrips">My Trips</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/logout">Logout</a>
+            <img class="circle" src="<%= user.photo %>" alt="avatar">&nbsp;&nbsp;
+          <h7>Hi, <%= user.name %> </h7>
+            <a class="mdl-navigation__link fixed-link" href="/trips/new">Create Trip</a>
+            <a class="mdl-navigation__link fixed-link" href="/mytrips">My Trips</a>
+            <a class="mdl-navigation__link fixed-link" href="/logout">Log Out</a>
           <% } else { %>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase fixed-link" href="/auth/facebook">Login</a>
+            <a class="mdl-navigation__link fixed-link" href="/auth/facebook">Log In</a>
           <% } %>
         </nav>
       </div>
@@ -21,13 +23,15 @@
     <nav class="mdl-navigation drawer-nav">
       <div class="navbar-drawer-separator"></div>
       <% if (user) { %>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/trips/new">Create Trip</a>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/mytrips">My Trips</a>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/logout">Logout</a>
+        <br><h7> Hi, <%= user.name %> </h7><br>
+        <div class="navbar-drawer-separator"></div>
+        <a class="mdl-navigation__link drawer-link" href="/trips/new">Create Trip</a>
+        <a class="mdl-navigation__link drawer-link" href="/mytrips">My Trips</a>
+        <a class="mdl-navigation__link drawer-link" href="/logout">Log Out</a>
       <% } else { %>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="/auth/facebook">Login</a>
+        <a class="mdl-navigation__link drawer-link" href="/auth/facebook">Log In</a>
       <% } %>
       <div class="navbar-drawer-separator"></div>
-      <a class="mdl-navigation__link mdl-typography--text-uppercase drawer-link" href="">About</a>
+      <a class="mdl-navigation__link drawer-link" href="">About</a>
     </nav>
   </div>
