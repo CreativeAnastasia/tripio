@@ -22,7 +22,7 @@
                 <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
                 <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>/edit">Edit This Trip</a>
                 <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
-                    <button id="delete-trip" type="button" class="mdl-button mdl-js-button mdl-button--primary">Delete This Trip</button>
+                    <button type="button" class="delete-trip mdl-button mdl-js-button mdl-button--primary">Delete This Trip</button>
                         <dialog class="mdl-dialog">
                           <h3 class="mdl-dialog__title">Delete Trip</h3>
                           <div class="mdl-dialog__content">
@@ -52,16 +52,19 @@
     </main>
     </div>
     <script> //delete confirmation
-      var dialog = document.querySelector('dialog');
-      var showDialogButton = document.querySelector('#delete-trip');
-      if (! dialog.showModal) {
-        dialogPolyfill.registerDialog(dialog);
-      }
-      showDialogButton.addEventListener('click', function() {
-        dialog.showModal();
-      });
-      dialog.querySelector('.close').addEventListener('click', function() {
-        dialog.close();
+      var dialogs = document.querySelectorAll('dialog');
+      var showDialogButton = document.querySelectorAll('.delete-trip');
+      showDialogButton.forEach(function(button, i) {
+        button.addEventListener('click', function() {
+          dialogs[i].showModal();
+        });
+        dialogs.forEach(function(dialog) {
+          dialog.querySelector('.close').addEventListener('click', function() {
+            if (dialog.hasAttribute('open')) {
+              dialog.close();
+            }
+          })
+        })
       });
     </script>
     <script> //ratings
