@@ -39,7 +39,7 @@
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="time">
       <% if (trip) { %>
         <% trip.stops.forEach(function(stop) { %>
-          <input class="mdl-textfield__input" name="time" placeholder="Time" value="<%= stop.time %>">
+          <input class="mdl-textfield__input" name="time" type="time" placeholder="Time" value="<%= stop.time %>">
         <% }) %>
       <% } else { %>
         <input type="time" class="mdl-textfield__input" name="time" placeholder="Time">
