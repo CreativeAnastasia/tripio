@@ -54,7 +54,8 @@
     </div>
     </main>
     </div>
-    <script> //delete confirmation
+    <!-- delete trip confirmation dialog -->
+    <script>
       var dialogs = document.querySelectorAll('dialog');
       var showDialogButton = document.querySelectorAll('.delete-trip');
       showDialogButton.forEach(function(button, i) {
@@ -70,15 +71,16 @@
         })
       });
     </script>
-    <script> //ratings
+    <!-- ratings -->
+    <script>
         var ratings = [
         <% user.trips.forEach(function(trip, index) { %>
-            <%= trip.avgRating %>,
+          <%= trip.avgRating %>,
         <% }) %>
         ];
         ratings.forEach(function(rating, idx) {
-           var ratingPercentage = rating / 5 * 100;
-           document.getElementById(`rating-${idx}`).style.width=`${ratingPercentage}%`;
+          var ratingPercentage = rating / 5 * 100;
+          document.getElementById(`rating-${idx}`).style.width=`${ratingPercentage}%`;
         });
      </script>
   </body>
