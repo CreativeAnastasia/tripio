@@ -11,8 +11,8 @@
     <div class="mdl-grid">
       <% user.trips.forEach(function(trip, index) { %>
         <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
-        <img src="<%= trip.pictureUrl %>" alt="pic">
-        <div class="mdl-card__title">
+            <img class="trip-pic" src="<%= trip.pictureUrl %>" alt="pic">
+            <div class="mdl-card__title">
           <h2 class="mdl-card__title-text"><%= trip.name %></h2>
         </div>
         <div class="mdl-card__supporting-text">
