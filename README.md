@@ -1,47 +1,44 @@
-## tripio app
-####planning made easy
-(gif image here)
-<img src="" width="600">
+# Tripio: Planning Made Easy
 
+By Sam Skelton, Anastasiya Varanetskaya, & Julia Yi
 
-
+![](screenshot)
+![](screenshot)
 
 ##  Description 
-Tripio is a day-trip planning app that allows users to create their own itineraries, share them publicly, and follow others’ itineraries. The planning process is streamlined because Tripio is a one-stop-shop.
+Tripio is a 24-hours-or-less trip planning app that allows users to create their own itineraries, share them publicly, and follow other users' itineraries. While other 24-hour city guides are available online, they usually lack a customization aspect or are tailored to a specific type of traveler (i.e. The New York Times' 36 Hours In column).
 
+We also found that most travel planning apps lack a social component that extends beyond sharing the link directly. Tripio provides a platform where all itineraries are publicly accessible for other users to view. Using the Google Maps/Places API, users are also able to create itineraries easily and streamline their planning process.
 
 ## Technologies Used:
-* **Javascript** - used by all web browsers, Meteor, and lots of other frameworks 
-* **Node.js** is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. 
-* **Express** is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+* **HTML** is a markup language. It provides structure of a website so that web browsers know what to show
+* **CSS** is a Cascading Style Sheet. CSS let’s web designers change colors, fonts, animations, and transitions on the web
+* **Javascript** is used by all web browsers, Meteor and other frameworks 
+* **Node.js** is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient
+* **Express** is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications
 * **MongoDB** is an open-source document database and leading NoSQL database. MongoDB document databases provide high availability and easy scalability.
-* **Mongoose** provides a straight-forward, schema-based solution to model your application data.
-* **Google Places API Web Service** features more than 100 million businesses and points of interest that are updated frequently through owner-verified listings and user-moderated contributions.
-* **HTML** is a markup language. It provides structure of a website so that web browsers know what to show.
-* **Material Design Lite** lets you add a Material Design look and feel to your websites. It doesn’t rely on any JavaScript frameworks and aims to optimize for cross-device use, gracefully degrade in older browsers, and offer an experience that is immediately accessible.
-* **CSS** is a Cascading Style Sheet. CSS let’s web designers change colors, fonts, animations, and transitions on the web. They make the web look good.
+* **Mongoose** provides a straight-forward, schema-based solution to model application data
+* **Google Places API Web Service** features more than 100 million businesses and points of interest that are updated frequently through owner-verified listings and user-moderated contributions
+* **Material Design Lite** allows users to add a Material Design-type look and feel to websites]
+* Adobe Photoshop
+* Adobe Illustrator
 
+## Progress
+![](gif link goes here)
 
 ##  Getting Started:
-Here is the link to our Trello board:
-<br>[Trello account](https://trello.com/b/bERH9WfM/tripio)</br>
- 
-Here is the link to the Tripio web app:
-<br>[tripio web app](https://)</br>
 
-Here is the link to Github:
-<br>[github](https://github.com/CreativeAnastasia/tripio)</br>
+[Tripio](link will be here)
 
-## Team:
-Group of devs who want to combine our interests of traveling and eating into an app:
+[Tripio Trello Board](https://trello.com/b/bERH9WfM/tripio)
 
-* **Sam Skelton**
-* **Anastasiya Varanetskaya**
-* **Julia Yi**
+[Tripio GitHub](https://github.com/CreativeAnastasia/tripio)
+
 
 ## Next Steps: 
 
-  *  
-  *  
-  *   
+In order to improve Tripio, the following features would be added:
 
+1. Saving itineraries you like to your account
+2. Commenting on itineraries and being able to read others' comments
+3. Logging in/registering without a Facebook account
