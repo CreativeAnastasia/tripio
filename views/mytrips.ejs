@@ -6,7 +6,7 @@
   <body>
   <% include ./partials/_nav %>
   <script>
-  // facebook sharing
+  // facebook sharing SDK
     window.fbAsyncInit = function() {
       FB.init({
         appId            : '808698709278424',
@@ -15,7 +15,6 @@
       });
       FB.AppEvents.logPageView();
     };
-
     (function(d, s, id){
        var js, fjs = d.getElementsByTagName(s)[0];
        if (d.getElementById(id)) {return;}
