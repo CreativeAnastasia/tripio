@@ -3,23 +3,23 @@
  * @constructor
  */
 function StarRating() {
-  this.init();
+    this.init();
 };
 
 /**
  * Initialize
  */
 StarRating.prototype.init = function() {
-  this.stars = document.querySelectorAll('#rating span');
-  for (var i = 0; i < this.stars.length; i++) {
-    this.stars[i].setAttribute('data-count', i);
-    this.stars[i].addEventListener('mouseenter', this.enterStarListener.bind(this));
-  }
+    this.stars = document.querySelectorAll('#rating span');
+    for (var i = 0; i < this.stars.length; i++) {
+        this.stars[i].setAttribute('data-count', i);
+        this.stars[i].addEventListener('mouseenter', this.enterStarListener.bind(this));
+    }
 
-  var rating = document.querySelector('#rating');
-  if (rating) {
-    rating.addEventListener('mouseleave', this.leaveStarListener.bind(this));
-  }
+    var rating = document.querySelector('#rating');
+    if (rating) {
+        rating.addEventListener('mouseleave', this.leaveStarListener.bind(this));
+    }
 };
 
 /**
@@ -27,14 +27,14 @@ StarRating.prototype.init = function() {
  * @param e
  */
 StarRating.prototype.enterStarListener = function(e) {
-  this.fillStarsUpToElement(e.target);
+    this.fillStarsUpToElement(e.target);
 };
 
 /**
  * This method is fired when the user leaves the #rating element, effectively removing all hover states.
  */
 StarRating.prototype.leaveStarListener = function() {
-  this.fillStarsUpToElement(null);
+    this.fillStarsUpToElement(null);
 };
 
 /**
@@ -42,14 +42,14 @@ StarRating.prototype.leaveStarListener = function() {
  * @param el
  */
 StarRating.prototype.fillStarsUpToElement = function(el) {
-  // Remove all hover states:
-  for (var i = 0; i < this.stars.length; i++) {
-    if (el == null || this.stars[i].getAttribute('data-count') > el.getAttribute('data-count')) {
-      this.stars[i].classList.remove('hover');
-    } else {
-      this.stars[i].classList.add('hover');
+    // Remove all hover states:
+    for (var i = 0; i < this.stars.length; i++) {
+        if (el == null || this.stars[i].getAttribute('data-count') > el.getAttribute('data-count')) {
+            this.stars[i].classList.remove('hover');
+        } else {
+            this.stars[i].classList.add('hover');
+        }
     }
-  }
 };
 
 // Run:
@@ -57,13 +57,12 @@ new StarRating();
 
 // Search trips by tags
 function searchTrips() {
-  var input, filter, tripCards;
-  input = document.getElementById('sample6');
-  filter = input.value.toLowerCase();
-  tripCards = document.querySelectorAll('.tripio-card');
-  tripCards.forEach(function(card) {
-    console.log('searchsearchsearch')
-    card.style.display = (card.attributes.getNamedItem('data-tags').value.includes(filter)) ? '' : 'none';
-  });
+    var input, filter, tripCards;
+    input = document.getElementById('sample6');
+    filter = input.value.toLowerCase();
+    tripCards = document.querySelectorAll('.tripio-card');
+    tripCards.forEach(function(card) {
+        console.log('searchsearchsearch')
+        card.style.display = (card.attributes.getNamedItem('data-tags').value.includes(filter)) ? '' : 'none';
+    });
 };
-
