@@ -4,6 +4,6 @@ var apiCtrl = require('../controllers/api/api');
 
 
 router.get('/api/all', apiCtrl.getAllTrips);
-router.get('/api/:id', apiCtrl.getOneTrip );
+router.get('/api/:id', apiCtrl.getOneTrip);
 
 module.exports = router;
