@@ -10,18 +10,9 @@
     window.fbAsyncInit = function() {
       FB.init({
         appId            : '808698709278424',
-        autoLogAppEvents : true,
         xfbml            : true,
         version          : 'v2.9'
       });
-
-      FB.ui(
-       {
-        method: 'share',
-        display: 'popup',
-        href: 'https://developers.facebook.com/docs/'
-      }, function(response){});
-
       FB.AppEvents.logPageView();
     };
 
