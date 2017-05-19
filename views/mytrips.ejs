@@ -6,7 +6,7 @@
   <body>
   <% include ./partials/_nav %>
   <script>
-  // facebook sharing
+  // facebook sharing SDK
     window.fbAsyncInit = function() {
       FB.init({
         appId            : '808698709278424',
@@ -15,7 +15,6 @@
       });
       FB.AppEvents.logPageView();
     };
-
     (function(d, s, id){
        var js, fjs = d.getElementsByTagName(s)[0];
        if (d.getElementById(id)) {return;}
@@ -29,7 +28,7 @@
     <h3 class="tripio-my-trips"><%= user.name %>'s Trips</h3>
     <div class="mdl-grid">
       <% user.trips.forEach(function(trip, index) { %>
-        <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
+        <div class="tripio-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col">
           <div class="mdl-card__title">
             <h2 class="mdl-card__title-text"><%= trip.name %></h2>
           </div>
