@@ -16,7 +16,7 @@ var tripSchema = new Schema({
   tagline: String,
   location: String,
   summary: String,
-  pictureUrl: {type: String, default: "http://bit.ly/2pYfFSg"},
+  pictureUrl: {type: String, default: "http://www.adirectory.us/pix/destinations-400.jpg"},
   stops: [stopSchema],
   tags: [{type: String}],
   ratings: [ratingSchema]

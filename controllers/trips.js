@@ -8,7 +8,7 @@ var tripController = {
 
   index: function(req, res, next) {
     Trip.find({}, (err, trips) => {
-      res.render('index', {trips: trips, user: req.user});
+      res.render('index', {req: req, trips: trips, user: req.user});
     });
   },
 
@@ -60,7 +60,7 @@ var tripController = {
     Trip.findById(req.params.id, (err, trip) => {
       var tripjson = trip.toObject();
       tripjson = JSON.stringify(tripjson)
-      res.render('show', {trip: trip, user: req.user, tripJSON: tripjson});
+      res.render('show', {req: req, trip: trip, user: req.user, tripJSON: tripjson});
     })
   },
 
