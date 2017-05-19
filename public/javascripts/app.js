@@ -62,8 +62,6 @@ function searchTrips() {
   filter = input.value.toLowerCase();
   tripCards = document.querySelectorAll('.tripio-card');
   tripCards.forEach(function(card) {
-    console.log('searchsearchsearch')
     card.style.display = (card.attributes.getNamedItem('data-tags').value.includes(filter)) ? '' : 'none';
   });
 };
-
