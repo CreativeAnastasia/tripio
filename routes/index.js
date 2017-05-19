@@ -10,20 +10,18 @@ router.get('/landing', tripController.landing);
 
 
 router.get('/auth/facebook',
-  passport.authenticate('facebook', { scope: 'email' }
-));
+    passport.authenticate('facebook', { scope: 'email' }));
 
 router.get('/auth/facebook/callback', passport.authenticate(
-  'facebook',
-  {
-     successRedirect : '/trips',
-     failureRedirect : '/'
-   }
+    'facebook', {
+        successRedirect: '/trips',
+        failureRedirect: '/'
+    }
 ));
 
-router.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
+router.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/trips');
 });
 
 router.get('/mytrips', tripController.mytrips);

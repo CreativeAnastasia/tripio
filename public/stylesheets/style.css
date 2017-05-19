@@ -1,174 +1,176 @@
 h7 {
-  padding: 0px 20px 0px 40px;
+    padding: 0px 20px 0px 40px;
 }
 
 #search {
-  margin: 0 auto;
-  height: 40px;
+    margin: 0 auto;
+    height: 40px;
 }
 
 #search-field {
-  bottom: 15px;
+    bottom: 15px;
 }
 
 .mdl-layout__content {
-  padding-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .mdl-navigation__link {
-  opacity: 1;
+    opacity: 1;
 }
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
-  color: teal;
-  padding: 16px 40px;
+    color: teal;
+    padding: 16px 40px;
 }
 
 .mdl-layout__header-row {
-  padding-right: 0;
+    padding-right: 0;
 }
 
 .fixed-link {
-  transition: 0.4s;
-  color: #FFFFFF;
+    transition: 0.4s;
+    color: #FFFFFF;
 }
 
 .fixed-link:hover {
-  background-color: #FFFFFF;
-  opacity: 0.8;
-  color: teal;
-  padding: 0 40px;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    color: teal;
+    padding: 0 40px;
 }
 
 .drawer-link {
-  transition: 0.4s;
+    transition: 0.4s;
 }
 
 .tripio-content {
-  margin: 40px 60px;
+    margin: 40px 60px;
 }
 
 .tripio-logo {
-  height: 65px;
+    height: 65px;
 }
 
 .navbar-drawer-separator {
-  height: 1px;
-  background-color: #dcdcdc;
-  margin: 8px 0;
-  margin-bottom: 15px;
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+    margin-bottom: 15px;
 }
 
 .circle {
-  height: 65%;
-  margin-right: -30px;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
+    height: 65%;
+    margin-right: -30px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+}
+
+.tripio-card {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .tripio-card > .mdl-card__menu {
-  color: #fff;
+    color: #fff;
 }
 
-.tripio-card > .mdl-card__title, .mdl-card__title {
-  color: #fff;
-  height: 176px;
-  position: absolute;
-  text-shadow: 1px 1px black;
+.tripio-card > .mdl-card__title,
+.mdl-card__title {
+    color: #fff;
+    height: 176px;
+    position: absolute;
+    text-shadow: 1px 1px black;
 }
 
 img.tripio-card-pic {
-  object-fit: cover;
-  height: 180px;
-  width: 418.56px;
+    object-fit: cover;
+    height: 180px;
+    width: 418.56px;
 }
 
 .mdl-card__menu > a {
-  color: white;
-  opacity: 1;
+    color: white;
+    opacity: 1;
 }
 
 .tripio-rating-show-page {
-  width: 125px;
-  margin: 0 auto;
+    width: 125px;
+    margin: 0 auto;
 }
 
 .tripio-rating-show-page div {
-  background-color: yellow;
-  width: 125px;
-  margin: 0 auto;
+    background-color: yellow;
+    width: 125px;
+    margin: 0 auto;
 }
 
 .tripio-rating {
-  height: 30px;
-  width: 125px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding-bottom: 10px;
-  padding-right: 10px;
+    height: 30px;
+    width: 125px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 10px;
+    padding-right: 10px;
 }
 
 .tripio-rating div {
-  background-color: yellow;
-  height: 30px;
-  width: 125px;
-  position: relative;
-  top: 0;
-  left: 0;
+    background-color: yellow;
+    height: 30px;
+    width: 125px;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 #rating-show {
-  margin: 0;
+    margin: 0;
 }
 
 .tripio-stars {
-  margin: 0 auto;
-  width: 125px;
-  height: 30px;
+    margin: 0 auto;
+    width: 125px;
+    height: 30px;
 }
 
-.tripio-show, .tripio-my-trips {
-  text-align: center;
-  margin: 0;
+.tripio-show,
+.tripio-my-trips {
+    text-align: center;
+    margin: 0;
 }
 
 #rating {
-  perspective: 400px;
-  float: right;
-  display: inline-block;
+    perspective: 400px;
+    float: right;
+    display: inline-block;
 }
 
 #rating span {
-  cursor: pointer;
-  font-size: 25px;
-  padding: 0 1px;
-  color: #000000;
-  opacity: .7;
-  transition: all 150ms;
-  display: inline-block;
-  transform: rotateX(45deg);
-  transform-origin: center bottom;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 0 1px;
+    color: #000000;
+    opacity: .7;
+    transition: all 150ms;
+    display: inline-block;
+    transform: rotateX(45deg);
+    transform-origin: center bottom;
 }
 
 #rating span.hover {
-  color: yellow;
-  opacity: 1;
-  transform: rotateX(0deg) scale(1.1);
-  text-shadow: 1px 1px 0 #6e2c00,
-     -1px -1px 0 #6e2c00,
-      1px -1px 0 #6e2c00,
-      -1px 1px 0 #6e2c00,
-       1px 1px 0 #6e2c00;
+    color: yellow;
+    opacity: 1;
+    transform: rotateX(0deg) scale(1.1);
+    text-shadow: 1px 1px 0 #6e2c00, -1px -1px 0 #6e2c00, 1px -1px 0 #6e2c00, -1px 1px 0 #6e2c00, 1px 1px 0 #6e2c00;
 }
 
 #map_canvas {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 dialog::backdrop {
-  background-color: black;
-  opacity: 0.5;
+    background-color: black;
+    opacity: 0.5;
 }
