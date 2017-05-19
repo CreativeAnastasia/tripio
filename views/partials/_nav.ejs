@@ -1,20 +1,20 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
  <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <a href="/trips"><img class="tripio-logo" src="../../images/tripio_logo_white.svg"></a>
-        <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <% if (user) { %>
-            <img class="circle" src="<%= user.photo %>" alt="avatar">&nbsp;&nbsp;
-          <h7>Hi, <%= user.name %> </h7>
-            <a class="mdl-navigation__link fixed-link" href="/trips/new">Create Trip</a>
-            <a class="mdl-navigation__link fixed-link" href="/mytrips">My Trips</a>
-            <a class="mdl-navigation__link fixed-link" href="/logout">Log Out</a>
-          <% } else { %>
-            <a class="mdl-navigation__link fixed-link" href="/auth/facebook">Log In</a>
-          <% } %>
-        </nav>
-      </div>
+    <div class="mdl-layout__header-row">
+      <a href="/trips"><img class="tripio-logo" src="../../images/tripio_logo_white.svg"></a>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <% if (user) { %>
+          <img class="circle" src="<%= user.photo %>" alt="avatar">&nbsp;&nbsp;
+        <h7>Hi, <%= user.name %> </h7>
+          <a class="mdl-navigation__link fixed-link" href="/trips/new">Create Trip</a>
+          <a class="mdl-navigation__link fixed-link" href="/mytrips">My Trips</a>
+          <a class="mdl-navigation__link fixed-link" href="/logout">Log Out</a>
+        <% } else { %>
+          <a class="mdl-navigation__link fixed-link" href="/auth/facebook">Log In</a>
+        <% } %>
+      </nav>
+    </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">

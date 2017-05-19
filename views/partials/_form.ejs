@@ -67,8 +67,9 @@
     </div>
     <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent" id="addStop">
       <i class="material-icons">add</i>
-      <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent" id="removeStop">
-        <i class="material-icons">remove</i>
+    </button>
+    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent" id="removeStop">
+      <i class="material-icons">remove</i>
     </button>
     <br>
     <div class="mdl-textfield mdl-js-textfield">
@@ -81,13 +82,12 @@
     </div>
   </div>
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-  <% if (trip) { %>
-    Save Trip
-  <% } else { %>
-    Add Trip
-  <% } %>
+    <% if (trip) { %>
+      Save Trip
+    <% } else { %>
+      Add Trip
+    <% } %>
   </button>
-
 </form>
 
 <script type="text/javascript">
@@ -105,39 +105,33 @@ initialize();
 </script>
 
 <script>
- var nextAc = 3;
-
+  var nextAc = 3;
   $("#addStop").click(function(e) {
     e.preventDefault();
   //Append a new row of code to the "#stops" div
   $("#stops").append(`<div class="dynamicstop"><input class="mdl-textfield__input mdl-js-textfield autocomplete " id="ac[${nextAc}]" name="stop" placeholder="Stop"</div> <br>`)
     $("#time").append('<div class="dynamictime"><input type="time" class="mdl-textfield__input " name="time" placeholder="Time"</div> <br>');
-
-   var auto = new google.maps.places.Autocomplete(document.getElementById(`ac[${nextAc}]`));
-   auto.inputId = document.getElementById(`ac[${nextAc}]`).id;
-   nextAc++
-   if (nextAc > 11){
-     $("#addStop").hide()
-   }
-   if (nextAc < 11){
-     $("#addStop").css("display", "inline")
-   }
-   console.log(nextAc)
-  });
-if (nextAc < 10){
-  $("#removeStop").click(function(e){
+  var auto = new google.maps.places.Autocomplete(document.getElementById(`ac[${nextAc}]`));
+  auto.inputId = document.getElementById(`ac[${nextAc}]`).id;
+  nextAc++
+  if (nextAc > 11) {
+    $("#addStop").hide()
+  }
+  if (nextAc < 11) {
     $("#addStop").css("display", "inline")
-  })
-}
-  </script>
-
-  <script>
-    $("#removeStop").click(function(e){
-      e.preventDefault();
-      console.log($("#stops"))
-      $(".dynamicstop").last().remove();
-      $(".dynamictime").last().remove();
-      nextAc--
-      console.log(nextAc)
+  }
+  });
+  if (nextAc < 10) {
+    $("#removeStop").click(function(e) {
+      $("#addStop").css("display", "inline")
     })
-  </script>
+  }
+</script>
+<script>
+  $("#removeStop").click(function(e) {
+    e.preventDefault();
+    $(".dynamicstop").last().remove();
+    $(".dynamictime").last().remove();
+    nextAc--
+  })
+</script>

@@ -16,71 +16,71 @@
       FB.AppEvents.logPageView();
     };
 
-    (function(d, s, id){
+    (function(d, s, id) {
        var js, fjs = d.getElementsByTagName(s)[0];
        if (d.getElementById(id)) {return;}
        js = d.createElement(s); js.id = id;
        js.src = "//connect.facebook.net/en_US/sdk.js";
        fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
+     } (document, 'script', 'facebook-jssdk'));
   </script>
-    <main class="mdl-layout__content">
-    <div class="page-content tripio-content">
-    <div class="mdl-grid">
-        <!-- search bar -->
-        <div class="mdl-cell mdl-cell--12-col" id="search">
-            <form action="#">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" id="search-field">
-                <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6" id="search-icon">
-                  <i class="material-icons">search</i>
-                </label>
-                <div class="mdl-textfield__expandable-holder">
-                  <input class="mdl-textfield__input" type="text" id="sample6" placeholder="Search for trips by tags" onkeyup="searchTrips()">
-                  <label class="mdl-textfield__label" for="sample-expandable">Search Bar</label>
-                </div>
-              </div>
-            </form>
+  <main class="mdl-layout__content">
+  <div class="page-content tripio-content">
+  <div class="mdl-grid">
+      <!-- search bar -->
+    <div class="mdl-cell mdl-cell--12-col" id="search">
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" id="search-field">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6" id="search-icon">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" id="sample6" placeholder="Search for trips by tags" onkeyup="searchTrips()">
+            <label class="mdl-textfield__label" for="sample-expandable">Search Bar</label>
+          </div>
         </div>
-        <!-- all trip cards -->
-        <% trips.forEach(function(trip, index) { %>
-            <div class="tripio-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col" data-tags="<%= trip.tags.join() %>">
-                <div class="mdl-card__media">
-                    <img class="tripio-card-pic" src="<%= trip.pictureUrl %>" alt="tripio-card-picture">
-                </div>
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text"><%= trip.name %></h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <%= trip.tagline %><br>
-                    <%= trip.location %>
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
-                    <div class="tripio-rating">
-                        <div id="<%= 'rating-' + index %>">
-                            <img class="tripio-stars" src="images/transparent_stars.png" alt="Start">
-                        </div>
-                    </div>
-                </div>
-                <div class="mdl-card__menu">
-                    <div class="fb-share-button" data-href="<%=`https://tripio-app.herokuapp.com/trips/${trip.id}`%>" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
-                </div>
-            </div><br>
-        <% }) %>
+      </form>
     </div>
-    </div>
-    </main>
-    </div>
-    <script>
-        var ratings = [
-        <% trips.forEach(function(trip, index) { %>
-            <%= trip.avgRating %>,
-        <% }) %>
-        ];
-        ratings.forEach(function(rating, idx) {
-           var ratingPercentage = rating / 5 * 100;
-           document.getElementById(`rating-${idx}`).style.width=`${ratingPercentage}%`;
-        });
-     </script>
+      <!-- all trip cards -->
+    <% trips.forEach(function(trip, index) { %>
+        <div class="tripio-card mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col" data-tags="<%= trip.tags.join() %>">
+          <div class="mdl-card__media">
+            <img class="tripio-card-pic" src="<%= trip.pictureUrl %>" alt="tripio-card-picture">
+          </div>
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text"><%= trip.name %></h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <%= trip.tagline %><br>
+            <%= trip.location %>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" href="/trips/<%= trip._id %>">View This Trip</a>
+            <div class="tripio-rating">
+              <div id="<%= 'rating-' + index %>">
+                <img class="tripio-stars" src="images/transparent_stars.png" alt="Start">
+              </div>
+            </div>
+          </div>
+          <div class="mdl-card__menu">
+            <div class="fb-share-button" data-href="<%=`https://tripio-app.herokuapp.com/trips/${trip.id}`%>" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+          </div>
+        </div><br>
+    <% }) %>
+  </div>
+  </div>
+  </main>
+  </div>
+  <script>
+    var ratings = [
+    <% trips.forEach(function(trip, index) { %>
+      <%= trip.avgRating %>,
+    <% }) %>
+    ];
+    ratings.forEach(function(rating, idx) {
+      var ratingPercentage = rating / 5 * 100;
+      document.getElementById(`rating-${idx}`).style.width=`${ratingPercentage}%`;
+    });
+  </script>
   </body>
 </html>
