@@ -10,7 +10,6 @@ passport.use(new FacebookStrategy({
     },
 
     function(accessToken, refreshToken, profile, cb) {
-        console.log("profile", profile);
         User.findOne({ 'facebookId': profile.id }, function(err, user) {
             if (err) return cd(err);
             if (user) {

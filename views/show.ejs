@@ -12,7 +12,7 @@
         <span class="tripio-show">
           <h3><%= trip.name %></h3>
         <div class="">
-            <img class="tripio-card-pic" src="<%= trip.pictureUrl %>" alt="tripio-card-picture">
+          <img class="tripio-card-pic" src="<%= trip.pictureUrl %>" alt="tripio-card-picture">
         </div>
           <h4><%= trip.tagline %></h4>
           <div class="tripio-rating-show-page">
@@ -167,27 +167,26 @@
       map = new google.maps.Map($('#map_canvas')[0], myOptions);
       var trip = <%- tripJSON %>;
       var addresses = trip.stops.map(function(stop) { return stop.stop; });
-      console.log(addresses);
       var labels = '123456789'
       var labelIndex = 0;
       for (var x = 0; x < addresses.length; x++) {
-          $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
-              var p = data.results[0].geometry.location
-              var latlng = new google.maps.LatLng(p.lat, p.lng);
-              map.setCenter(latlng)
-              new google.maps.Marker(
-                {
-                  position: latlng,
-                  map: map,
-                  label: labels[labelIndex++ % labels.length]
-              });
-            })
-          }
+        $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
+          var p = data.results[0].geometry.location
+          var latlng = new google.maps.LatLng(p.lat, p.lng);
+          map.setCenter(latlng)
+          new google.maps.Marker(
+            {
+              position: latlng,
+              map: map,
+              label: labels[labelIndex++ % labels.length]
+          });
         })
+      }
+    })
    </script>
    <script>
-          var ratingPercentage = <%=  trip.avgRating/5 * 100 %>;
-          document.getElementById(`rating-show`).style.width=`${ratingPercentage}%`;
-    </script>
+   var ratingPercentage = <%=  trip.avgRating/5 * 100 %>;
+   document.getElementById(`rating-show`).style.width=`${ratingPercentage}%`;
+   </script>
   </body>
 </html>

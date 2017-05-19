@@ -80,7 +80,6 @@ var tripController = {
             trip.stops = [];
             if (typeof req.body.stop === "object") {
                 req.body.stop.forEach(function(stop, i) {
-                    console.log('i is ', i)
                     trip.stops.push({
                         time: req.body.time[i],
                         stop: req.body.stop[i]
