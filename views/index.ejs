@@ -5,9 +5,39 @@
   </head>
   <body>
   <% include ./partials/_nav %>
+  <script>
+  // facebook sharing
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '808698709278424',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.9'
+      });
+
+      FB.ui(
+       {
+        method: 'share',
+        display: 'popup',
+        href: 'https://developers.facebook.com/docs/'
+      }, function(response){});
+
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
     <main class="mdl-layout__content">
     <div class="page-content tripio-content">
     <div class="mdl-grid">
+    <div class="fb-share-button" data-href="<%=`${req.host}/trips/${trips[0].id}`%>" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
         <!-- search bar -->
         <div class="mdl-cell mdl-cell--12-col" id="search">
             <form action="#">
@@ -44,9 +74,9 @@
                     </div>
                 </div>
                 <div class="mdl-card__menu">
-                    <a href="https://www.google.com" target="_blank">
+                    <div class="fb-share-button" data-href="<%=`${req.host}/trips/${trip.id}`%>" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
                     <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                        <i class="material-icons">share</i>
+                        <i id="shareBtn" class="material-icons">share</i>
                     </button>
                     </a>
                 </div>
