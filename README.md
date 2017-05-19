@@ -2,8 +2,8 @@
 
 By [Sam Skelton](https://github.com/skeltonsam), [Anastasiya Varanetskaya](https://github.com/CreativeAnastasia), & [Julia Yi](https://github.com/juliamijiyi)
 
-![](screenshot)
-![](screenshot)
+![](https://i.imgur.com/4un19y0.png)
+![](https://i.imgur.com/WG9bVMv.png)
 
 ##  Description 
 Tripio is a 24-hours-or-less trip planning app that allows users to create their own itineraries, share them publicly, and follow other users' itineraries. While other 24-hour city guides are available online, they usually lack a customization aspect or are tailored to a specific type of traveler (i.e. The New York Times' 36 Hours In column).
@@ -25,13 +25,13 @@ We also found that most travel planning apps lack a social component that extend
 * Adobe Illustrator
 
 ## Progress
-![](gif link goes here)
+![](https://media.giphy.com/media/2FoaYd50Uxgv6/giphy.gif)
 
 ##  Getting Started:
 
-[Tripio](link will be here)
+[Tripio](https://tripio-wdi.herokuapp.com/)
 
-[Tripio Trello Board](https://trello.com/b/bERH9WfM/tripio)
+[Tripio Trello](https://trello.com/b/bERH9WfM/tripio)
 
 [Tripio GitHub](https://github.com/CreativeAnastasia/tripio)
 
