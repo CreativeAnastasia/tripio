@@ -25,8 +25,10 @@ We also found that most travel planning apps lack a social component that extend
 * Adobe Illustrator
 
 ## API Endpoints
-* /api/trips  -->  GET  -->  Retrieve all trips
-* /api/trips/:id  -->  GET  -->  Retrive one trip
+| URI | HTTP Verb | Use Case |
+|:----|:----------|:---------|
+|/api/trips | GET | Retrieve all trips |
+|/api/trips/:id | GET | Retrieve one trip |
 
 ## Progress
 ![](https://media.giphy.com/media/2FoaYd50Uxgv6/giphy.gif)
