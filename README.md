@@ -29,7 +29,7 @@ We also found that most travel planning apps lack a social component that extend
 
 ##  Getting Started:
 
-[Tripio](https://tripio-wdi.herokuapp.com/)
+[Tripio](https://tripio-app.herokuapp.com/)
 
 [Tripio Trello](https://trello.com/b/bERH9WfM/tripio)
 
