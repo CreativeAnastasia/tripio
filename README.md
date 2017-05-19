@@ -11,15 +11,16 @@ Tripio is a 24-hours-or-less trip planning app that allows users to create their
 We also found that most travel planning apps lack a social component that extends beyond sharing the link directly. Tripio provides a platform where all itineraries are publicly accessible for other users to view. Using the Google Maps/Places API, users are also able to create itineraries easily and streamline their planning process.
 
 ## Technologies Used:
-* **HTML** is a markup language. It provides structure of a website so that web browsers know what to show
-* **CSS** is a Cascading Style Sheet. CSS let’s web designers change colors, fonts, animations, and transitions on the web
-* **Javascript** is used by all web browsers, Meteor and other frameworks 
-* **Node.js** is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient
-* **Express** is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications
-* **MongoDB** is an open-source document database and leading NoSQL database. MongoDB document databases provide high availability and easy scalability.
-* **Mongoose** provides a straight-forward, schema-based solution to model application data
-* **Google Places API Web Service** features more than 100 million businesses and points of interest that are updated frequently through owner-verified listings and user-moderated contributions
-* **Material Design Lite** allows users to add a Material Design-type look and feel to websites]
+* HTML
+* CSS
+* Javascript
+* Node.js
+* Express
+* MongoDB
+* Mongoose
+* Google Places API Web Service
+* Facebook OAuth
+* Material Design Lite
 * Adobe Photoshop
 * Adobe Illustrator
 
