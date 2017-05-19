@@ -11,6 +11,9 @@
       <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone"> <!-- name, tagline and average rating stretching across 12 columns -->
         <span class="tripio-show">
           <h3><%= trip.name %></h3>
+        <div class="">
+            <img class="tripio-card-pic" src="<%= trip.pictureUrl %>" alt="tripio-card-picture">
+        </div>
           <h4><%= trip.tagline %></h4>
           <div class="tripio-rating-show-page">
             <div id="rating-show">
@@ -168,7 +171,7 @@
       var labels = '123456789'
       var labelIndex = 0;
       for (var x = 0; x < addresses.length; x++) {
-          $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
+          $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
               var p = data.results[0].geometry.location
               var latlng = new google.maps.LatLng(p.lat, p.lng);
               map.setCenter(latlng)
