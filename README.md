@@ -37,6 +37,8 @@ We also found that most travel planning apps lack a social component that extend
 
 [Tripio](https://tripio-app.herokuapp.com/)
 
+[Tripio Pitch Deck](https://docs.google.com/presentation/d/1gvOypLc4VjKqJzdAW68iwh28uGDSH4Sp1KnA5grDo2g/edit?usp=sharing)
+
 [Tripio Trello](https://trello.com/b/bERH9WfM/tripio)
 
 [Tripio GitHub](https://github.com/CreativeAnastasia/tripio)
